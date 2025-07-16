@@ -2,9 +2,15 @@
   "github": {
     "silent": true
   },
-  "buildCommand": "cd full-kit && pnpm build",
-  "installCommand": "cd full-kit && pnpm install",
+  "buildCommand": "pnpm build",
+  "installCommand": "pnpm install",
   "outputDirectory": "full-kit/.next",
   "framework": "nextjs",
-  "regions": ["iad1"]
+  "regions": ["iad1"],
+  "rewrites": [
+    {
+      "source": "/starter/(.*)",
+      "destination": "/starter-kit/$1"
+    }
+  ]
 }
