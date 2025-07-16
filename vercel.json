@@ -1,7 +1,5 @@
 {
-  "buildCommand": "cd full-kit && pnpm install && pnpm build",
-  "outputDirectory": "full-kit/.next",
-  "installCommand": "cd full-kit && pnpm install",
-  "framework": "nextjs",
-  "regions": ["iad1"]
+  "github": {
+    "silent": true
+  }
 }
