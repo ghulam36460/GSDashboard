@@ -1,0 +1,10 @@
+{
+  "buildCommand": "cd full-kit && pnpm build",
+  "outputDirectory": "full-kit/.next",
+  "installCommand": "pnpm install",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "env": {
+    "BASE_URL": "https://your-app-name.vercel.app"
+  }
+}

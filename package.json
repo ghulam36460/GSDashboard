@@ -1,0 +1,33 @@
+{
+  "name": "shadboard-nextjs",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "author": {
+    "name": "Layth Alqadhi",
+    "url": "https://github.com/LaythAlqadhi"
+  },
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "dev:full-kit": "cd full-kit && pnpm dev",
+    "dev:starter-kit": "cd starter-kit && pnpm dev",
+    "build:full-kit": "cd full-kit && pnpm build",
+    "build:starter-kit": "cd starter-kit && pnpm build",
+    "build": "pnpm build:full-kit && pnpm build:starter-kit"
+  },
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=10"
+  },
+  "packageManager": "pnpm@10.8.1",
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@semantic-release/github": "^11.0.1",
+    "semantic-release": "^24.2.3"
+  },
+  "dependencies": {
+    "pnpm": "^10.13.1"
+  }
+}
