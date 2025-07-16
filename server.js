@@ -1,7 +1,7 @@
 const { exec } = require('child_process');
 const path = require('path');
 
-console.log('🚀 Shadboard Project Server');
+console.log('🚀 GSDashboard Project Server');
 console.log('==========================\n');
 
 // Project Analysis

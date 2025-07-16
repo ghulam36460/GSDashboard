@@ -1,16 +1,26 @@
 {
+  "version": 2,
   "github": {
     "silent": true
   },
+
   "buildCommand": "pnpm build",
   "installCommand": "pnpm install",
-  "outputDirectory": "full-kit/.next",
+  "outputDirectory": ".next",
   "framework": "nextjs",
   "regions": ["iad1"],
+
   "rewrites": [
     {
       "source": "/starter/(.*)",
       "destination": "/starter-kit/$1"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/en/dashboards/analytics",
+      "permanent": false
     }
   ]
 }

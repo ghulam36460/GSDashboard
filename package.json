@@ -8,29 +8,35 @@
     "url": "https://github.com/ghulam36460"
   },
   "scripts": {
-    "dev": "node server.js",
-    "start": "node server.js",
     "dev:full-kit": "cd full-kit && pnpm dev",
     "dev:starter-kit": "cd starter-kit && pnpm dev",
     "build:full-kit": "cd full-kit && pnpm install && pnpm build",
     "build:starter-kit": "cd starter-kit && pnpm install && pnpm build",
     "build": "pnpm build:full-kit && pnpm build:starter-kit && pnpm copy:starter",
     "copy:starter": "mkdir -p full-kit/public/starter-kit && cp -r starter-kit/.next/static full-kit/public/starter-kit/ || echo 'Copy completed'",
-    "vercel-build": "pnpm build:full-kit && pnpm build:starter-kit"
+    "format": "cd full-kit && pnpm format",
+    "lint": "cd full-kit && pnpm lint"
   },
   "engines": {
-    "node": ">=22",
+    "node": "20.x",
     "pnpm": ">=10"
   },
   "packageManager": "pnpm@10.8.1",
   "devDependencies": {
-    "@commitlint/cli": "^19.8.0",
-    "@commitlint/config-conventional": "^19.8.0",
-    "@semantic-release/github": "^11.0.1",
-    "semantic-release": "^24.2.3"
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/js": "^9.31.0",
+    "@semantic-release/github": "^11.0.3",
+    "eslint": "^9.31.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.3.0",
+    "prettier": "^3.6.2",
+    "semantic-release": "^24.2.7",
+    "typescript-eslint": "^8.37.0"
   },
   "dependencies": {
-    "pnpm": "^10.13.1",
-    "next": "^15.2.4"
+    "next": "^15.4.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   }
 }

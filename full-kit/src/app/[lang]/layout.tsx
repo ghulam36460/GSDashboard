@@ -18,16 +18,24 @@ import { Toaster } from "@/components/ui/toaster"
 
 // Define metadata for the application
 // More info: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
-export const metadata: Metadata = {
-  title: {
-    template: "%s | Shadboard",
-    default: "Shadboard",
-  },
-  description: "",
-  metadataBase: new URL(process.env.BASE_URL as string),
+function getValidBaseUrl() {
+  const url = process.env.BASE_URL
+  if (!url) throw new Error("BASE_URL environment variable is missing")
+  try {
+    return new URL(url)
+  } catch {
+    throw new Error(`BASE_URL is invalid: ${url}`)
+  }
 }
 
-// Define fonts for the application
+export const metadata: Metadata = {
+  title: {
+    template: "%s | GSDashboard",
+    default: "GSDashboard",
+  },
+  description: "",
+  metadataBase: getValidBaseUrl(),
+}
 // More info: https://nextjs.org/docs/app/building-your-application/optimizing/fonts
 const latoFont = Lato({
   subsets: ["latin"],

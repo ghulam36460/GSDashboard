@@ -8,6 +8,28 @@ const nextConfig = {
   // See https://lucide.dev/guide/packages/lucide-react#nextjs-example
   transpilePackages: ["lucide-react"],
 
+  // Production optimizations
+  experimental: {
+    optimizePackageImports: ["@radix-ui/react-icons"],
+    turbo: {
+      rules: {
+        "*.svg": {
+          loaders: ["@svgr/webpack"],
+          as: "*.js",
+        },
+      },
+    },
+  },
+
+  // Remove standalone output for better Vercel compatibility
+  // output: 'standalone',
+
+  // Image optimization for Vercel
+  images: {
+    domains: ["localhost"],
+    formats: ["image/webp", "image/avif"],
+  },
+
   // See https://nextjs.org/docs/app/building-your-application/routing/redirecting#redirects-in-nextconfigjs
   async redirects() {
     return [
@@ -22,7 +44,7 @@ const nextConfig = {
       },
       {
         source: "/:lang",
-        destination: process.env.HOME_PATHNAME,
+        destination: process.env.HOME_PATHNAME || "/dashboards/analytics",
         permanent: true,
         has: [
           {
@@ -33,7 +55,7 @@ const nextConfig = {
       },
       {
         source: "/:lang",
-        destination: process.env.HOME_PATHNAME,
+        destination: process.env.HOME_PATHNAME || "/dashboards/analytics",
         permanent: true,
         has: [
           {

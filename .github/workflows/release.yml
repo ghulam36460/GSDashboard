@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   release:
-    if: ${{ github.repository_owner == 'Qualiora' }}
+    if: ${{ github.repository_owner == 'ghulam36460' }}
     name: Release
     runs-on: ubuntu-latest
     permissions:

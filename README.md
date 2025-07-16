@@ -1,6 +1,9 @@
-# Shadboard - Next.js 15 & Shadcn/UI Admin Dashboard Template
+# GSDashboard - Next.js 15 & Shadcn/UI Admin Dashboard Template
+**GSDashWe welcome contributions from the community! If you'd like to report bugs, suggest features, or contribute code, please check out our contributing guidelines for everything you need to get started.e welcome contributions from the community! If you'd like to report bugs, suggest features, or contribute code, please check out our contributing guidelines for everything you need to get started.oard** offers easy theme customization, allowing you to choose from pre-defined colors, border radii, and modes to match your brand's identity effortlessly. Whether you're building a light or dark theme, GSDashboard provides the flexibility to quickly adjust the look and feel of your dashboard. Tailor the dashboard's appearance to your project's unique needs with just a few clicks!
+**GSDashboard** is an open-source admin dashboard template built with Next.js 15 and Shadcn/ui components for scalable, user-friendly web apps. It's free for the community to use, learn from, and contribute to.
 
-**Shadboard** is an open-source admin dashboard template built with Next.js 15 and Shadcn/ui components for scalable, user-friendly web apps. It's free for the community to use, learn from, and contribute to.
+## 🚀 Live Demo
+[View Live Demo](https://your-deployment-url.vercel.app) (Update this with your actual Vercel URL after deployment)
 
 ## Core Features
 
@@ -34,7 +37,7 @@
 - **Embla Carousel** 
 - **FullCalendar**
 
-> For more details on the sources and credits used in Shadboard, visit the [sources & credits page](https://shadboard.vercel.app/docs/miscellaneous/sources-and-credits).
+>For more details on the sources and credits used in GSDashboard, check the project documentation.
 
 ## Apps & Pages
 
@@ -64,7 +67,7 @@
 
 ## Documentation
 
-Get started with detailed instructions and guides to help you integrate and customize **Shadboard** into your projects. Visit the full documentation here: [Docs](https://shadboard.vercel.app/docs)
+Get started with detailed instructions and guides to help you integrate and customize **GSDashboard** into your projects.
 
 ## Contributing
 
@@ -72,8 +75,24 @@ We welcome contributions from the community! If you’d like to report bugs, sug
 
 ## Live Demo
 
-See Shadboard in action by visiting the [live demo](https://shadboard.vercel.app/) now!
+See GSDashboard in action by visiting the live demo after deployment!
 
 ## Get Started
 
-Get your hands on **Shadboard** today and start building scalable, user-friendly applications with ease!
+Get your hands on **GSDashboard** today and start building scalable, user-friendly applications with ease!
+
+## 📦 Deployment
+
+This project is optimized for **Vercel** deployment. See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
+
+### Quick Deploy to Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ghulam36460/GSDashboard)
+
+### Environment Variables Required:
+- `BASE_URL`
+- `NEXTAUTH_URL` 
+- `NEXTAUTH_SECRET`
+- `DATABASE_URL`
+- `HOME_PATHNAME`
+- `NEXT_PUBLIC_HOME_PATHNAME`

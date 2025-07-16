@@ -19,5 +19,9 @@
   "files.eol": "\n",
   "files.associations": {
     "*.css": "tailwindcss"
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
   }
 }

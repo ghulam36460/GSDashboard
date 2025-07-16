@@ -16,4 +16,4 @@ body:
     id: location
     attributes:
       label: Page and/or section
-      description: e.g., overview > introduction > Key Features of Shadboard
+      description: e.g., overview > introduction > Key Features of GSDashboard

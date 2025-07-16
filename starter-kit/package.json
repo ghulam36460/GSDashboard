@@ -1,11 +1,11 @@
 {
-  "name": "shadboard-nextjs-starter-kit",
+  "name": "gs-dashboard-starter-kit",
   "version": "1.0.0",
   "license": "MIT",
   "private": true,
   "author": {
-    "name": "Layth Alqadhi",
-    "url": "https://github.com/LaythAlqadhi"
+    "name": "Ghulam & Shehwar",
+    "url": "https://github.com/ghulam36460"
   },
   "scripts": {
     "dev": "next dev --turbopack",
@@ -16,7 +16,7 @@
     "format": "prettier --ignore-path .gitignore --write ."
   },
   "engines": {
-    "node": ">=22",
+    "node": "20.x",
     "pnpm": ">=10"
   },
   "packageManager": "pnpm@10.8.1",

@@ -23,7 +23,7 @@ export function Footer() {
         <p className="text-xs text-muted-foreground md:text-sm">
           Designed & Developed By{" "}
           <a
-            href="https://github.com/Qualiora"
+            href="https://github.com/ghulam36460"
             target="_blank"
             rel="noopener noreferrer"
             className={cn(buttonVariants({ variant: "link" }), "inline p-0")}

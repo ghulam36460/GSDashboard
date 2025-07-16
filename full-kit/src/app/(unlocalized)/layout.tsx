@@ -1,7 +1,5 @@
 import { Lato } from "next/font/google"
 
-import { cn } from "@/lib/utils"
-
 import "../globals.css"
 
 import { Providers } from "@/providers"
@@ -9,18 +7,28 @@ import { Providers } from "@/providers"
 import type { Metadata } from "next"
 import type { ReactNode } from "react"
 
+import { cn } from "@/lib/utils"
+
 import { Toaster as Sonner } from "@/components/ui/sonner"
 import { Toaster } from "@/components/ui/toaster"
 
-// Define metadata for the application
-// More info: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
+function getValidBaseUrl() {
+  const url = process.env.BASE_URL
+  if (!url) throw new Error("BASE_URL environment variable is missing")
+  try {
+    return new URL(url)
+  } catch {
+    throw new Error(`BASE_URL is invalid: ${url}`)
+  }
+}
+
 export const metadata: Metadata = {
   title: {
-    template: "%s | Shadboard",
-    default: "Shadboard",
+    template: "%s | GSDashboard",
+    default: "GSDashboard",
   },
   description: "",
-  metadataBase: new URL(process.env.BASE_URL as string),
+  metadataBase: getValidBaseUrl(),
 }
 
 // Define fonts for the application

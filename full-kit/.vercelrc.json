@@ -1,0 +1,9 @@
+{
+  "name": "gsdashboard",
+  "version": 2,
+  "framework": "nextjs",
+  "buildCommand": "pnpm build",
+  "installCommand": "pnpm install",
+  "outputDirectory": ".next",
+  "public": false
+}

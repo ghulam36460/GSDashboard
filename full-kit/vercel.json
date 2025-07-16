@@ -1,8 +1,5 @@
 {
   "framework": "nextjs",
   "buildCommand": "pnpm build",
-  "installCommand": "pnpm install",
-  "env": {
-    "BASE_URL": "https://GSDashboard.vercel.app"
-  }
+  "installCommand": "pnpm install"
 }

@@ -1,0 +1,14 @@
+# Vercel ignore file
+starter-kit/
+server.js
+setup-db.sh
+setup-db.bat
+*.md
+.git/
+.gitignore
+.env.example
+.env.local
+.env.development
+node_modules/
+.next/
+.vercel/
