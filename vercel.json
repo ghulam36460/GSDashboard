@@ -1,10 +1,7 @@
 {
   "buildCommand": "cd full-kit && pnpm build",
-  "outputDirectory": "full-kit/.next",
+  "outputDirectory": "full-kit/.next", 
   "installCommand": "pnpm install",
   "framework": "nextjs",
-  "regions": ["iad1"],
-  "env": {
-    "BASE_URL": "https://gsdashboard.vercel.app"
-  }
+  "regions": ["iad1"]
 }
