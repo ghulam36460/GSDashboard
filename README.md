@@ -1,98 +1,94 @@
-# GSDashboard - Next.js 15 & Shadcn/UI Admin Dashboard Template
-**GSDashWe welcome contributions from the community! If you'd like to report bugs, suggest features, or contribute code, please check out our contributing guidelines for everything you need to get started.e welcome contributions from the community! If you'd like to report bugs, suggest features, or contribute code, please check out our contributing guidelines for everything you need to get started.oard** offers easy theme customization, allowing you to choose from pre-defined colors, border radii, and modes to match your brand's identity effortlessly. Whether you're building a light or dark theme, GSDashboard provides the flexibility to quickly adjust the look and feel of your dashboard. Tailor the dashboard's appearance to your project's unique needs with just a few clicks!
-**GSDashboard** is an open-source admin dashboard template built with Next.js 15 and Shadcn/ui components for scalable, user-friendly web apps. It's free for the community to use, learn from, and contribute to.
+GSDashboard
+GSDashboard is a modern, open-source admin dashboard template built with Next.js 15 and Shadcn/UI. It provides developers with a powerful, flexible foundation to build scalable, user-friendly web apps — all with beautiful design, performance, and accessibility in mind.
 
-## 🚀 Live Demo
-[View Live Demo](https://your-deployment-url.vercel.app) (Update this with your actual Vercel URL after deployment)
+🚀 Live Demo
+View Live Demo
+Update this with your actual deployment link after going live.
 
-## Core Features
+⚙️ Core Features
+React 19 – Leverages the latest features of React for optimal performance and developer experience.
 
-- **React 19:** Built using React 19 for enhanced performance, concurrency, and an exceptional developer experience.
-- **Next.js 15:** Powered by Next.js 15, ensuring server-side rendering, SEO optimization, and app router support for smooth navigation.
-- **Tailwind CSS:** Styled with Tailwind CSS, offering a utility-first approach for fast and responsive UI design that’s easy to customize.
-- **Radix UI:** Utilizes Radix UI for high-quality, accessible, and unstyled components that ensure seamless interaction.
-- **Internationalization (I18n):** Built-in support for multiple languages, making it easy to expand your app globally and serve diverse user bases.
-- **Authentication:** Integrated user authentication and session management for secure user logins and data protection.
-- **Customizer:** A tool for dynamically changing the style and colors of the dashboard, perfect for previewing and selecting your preferred theme.
-- **Content Rich:** Includes pre-built apps and pages, along with reusable components, to speed up your development process.
-- **Accessible:** Designed with accessibility in mind, ensuring usability for all users, including those with disabilities.
-- **Pre-Made Layouts:** Offers ready-to-use layouts for dashboards, profiles, and other essential pages, enabling quick setups.
-- **Responsive:** Fully responsive design, adapting seamlessly to different screen sizes for an optimal user experience across all devices.
-- **Learning Resource:** Explore advanced web development approaches to build scalable, maintainable applications through included learning resources.
-- **Well-Documented:** Comprehensive documentation for easy integration and customization, ensuring a smooth setup process for developers of all skill levels.
+Next.js 15 – Built on App Router with full SSR, SEO optimization, and blazing-fast routing.
 
-## Tools & Technologies
+Tailwind CSS 4 – A utility-first CSS framework for rapidly building custom UIs.
 
-- **React 19** 
-- **Next.js 15**
-- **Radix UI + shadcn/ui**
-- **Tailwind CSS 4** 
-- **NextAuth.js**
-- **Zod**
-- **React Hook Form** 
-- **Lucide** 
-- **React Icons**
-- **Recharts** 
-- **TanStack Table** 
-- **Embla Carousel** 
-- **FullCalendar**
+Radix UI + Shadcn/UI – Accessible, customizable components that ensure top-notch UX.
 
->For more details on the sources and credits used in GSDashboard, check the project documentation.
+Responsive Design – Mobile-ready and fully responsive across all devices.
 
-## Apps & Pages
+Internationalization (I18n) – Easily serve global audiences with built-in multilingual support.
 
-- **Email**
-- **Chat**
-- **Calendar**
-- **Kanban**
-- **Pricing**
-- **Payment**
-- **General Settings**
-- **Security Settings**
-- **Plan & Billing Settings**
-- **Notifications Settings**
-- **Coming Soon**
-- **Not Found 404**
-- **Unauthorized 401**
-- **Maintenance**
-- **Forgot Password**
-- **New Password**
-- **Verify Email**
-- **Register**
-- **Sign In**
+Authentication – Secure user login with integrated session management using NextAuth.js.
 
-## Theme Customization
+Theme Customizer – Easily switch between light/dark mode, border radii, and color schemes.
 
-**Shadboard** offers easy theme customization, allowing you to choose from pre-defined colors, border radii, and modes to match your brand’s identity effortlessly. Whether you're building a light or dark theme, Shadboard provides the flexibility to quickly adjust the look and feel of your dashboard. Tailor the dashboard's appearance to your project's unique needs with just a few clicks!
+Accessibility First – Built to be inclusive and usable for all users.
 
-## Documentation
+Learning Resource – Great for learning modern full-stack development practices.
 
-Get started with detailed instructions and guides to help you integrate and customize **GSDashboard** into your projects.
+Pre-Built Layouts – Includes dashboards, profiles, and other common page templates.
 
-## Contributing
+Reusable Components – Speed up development with modular, extensible UI components.
 
-We welcome contributions from the community! If you’d like to report bugs, suggest features, or contribute code, please check out our [contributing guidelines](https://github.com/Qualiora/shadboard/blob/main/CONTRIBUTING.md) for everything you need to get started.
+Comprehensive Documentation – Clear instructions to get you started and scale smoothly.
 
-## Live Demo
+🧰 Built With
+React 19
 
-See GSDashboard in action by visiting the live demo after deployment!
+Next.js 15
 
-## Get Started
+Tailwind CSS 4
 
-Get your hands on **GSDashboard** today and start building scalable, user-friendly applications with ease!
+Shadcn/UI & Radix UI
 
-## 📦 Deployment
+NextAuth.js
 
-This project is optimized for **Vercel** deployment. See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
+React Hook Form & Zod
 
-### Quick Deploy to Vercel
+Lucide & React Icons
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ghulam36460/GSDashboard)
+Recharts
 
-### Environment Variables Required:
-- `BASE_URL`
-- `NEXTAUTH_URL` 
-- `NEXTAUTH_SECRET`
-- `DATABASE_URL`
-- `HOME_PATHNAME`
-- `NEXT_PUBLIC_HOME_PATHNAME`
+TanStack Table
+
+Embla Carousel
+
+FullCalendar
+
+📄 Pages & Apps Included
+Dashboard Overview
+
+Email & Chat
+
+Calendar
+
+Kanban
+
+Pricing & Payment
+
+Settings (General, Security, Billing, Notifications)
+
+Authentication Pages (Register, Sign In, Forgot Password, Verify Email, New Password)
+
+Utility Pages (Coming Soon, 401 Unauthorized, 404 Not Found, Maintenance Mode)
+
+🎨 Theme Customization
+With built-in theming support, GSDashboard allows you to:
+
+Toggle between light and dark modes
+
+Select border radius styles
+
+Choose from predefined color schemes
+
+Preview changes instantly using the interactive customizer
+
+📦 Deployment
+GSDashboard is optimized for seamless deployment on Vercel.
+
+See the included DEPLOYMENT.md for a full guide, or quickly deploy using the button below:
+
+
+
+Required Environment Variable:
+BASE_URL – Set this to your app's live URL for full functionality.
