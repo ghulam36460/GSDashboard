@@ -1,0 +1,36 @@
+# Vercel Environment Variables Configuration
+# Copy these to your Vercel Dashboard > Project Settings > Environment Variables
+
+# CRITICAL: Production URLs
+NEXTAUTH_URL=https://gsdashboard-five.vercel.app
+BASE_URL=https://gsdashboard-five.vercel.app
+API_URL=https://gsdashboard-five.vercel.app/api
+
+# CRITICAL: NextAuth Secret (REQUIRED)
+# Generate a new secret with: openssl rand -base64 32
+NEXTAUTH_SECRET=HuwYx8DVGeTdW6sF48gHzo5+LwNZyu/A3HDRe3far90=
+
+# DATABASE: PostgreSQL for Production
+# IMPORTANT: Replace with actual PostgreSQL connection string
+# Option 1: Vercel Postgres (recommended)
+# DATABASE_URL=postgres://default:password@host:port/verceldb
+# Option 2: Neon.tech (free PostgreSQL)
+# DATABASE_URL=postgresql://username:password@host:port/database
+# Option 3: Temporary SQLite (for testing only)
+DATABASE_URL=file:./prisma/dev.db
+
+# Application Settings
+HOME_PATHNAME=/dashboards/analytics
+NEXT_PUBLIC_HOME_PATHNAME=/dashboards/analytics
+
+# Optional OAuth Providers (uncomment and add if needed)
+# GITHUB_CLIENT_ID=your_github_client_id_here
+# GITHUB_CLIENT_SECRET=your_github_client_secret_here
+# GOOGLE_CLIENT_ID=your_google_client_id_here
+# GOOGLE_CLIENT_SECRET=your_google_client_secret_here
+
+# Development Environment Variables (for reference)
+# These should NOT be set in production
+# NODE_ENV=production (automatically set by Vercel)
+# VERCEL=1 (automatically set by Vercel)
+# VERCEL_URL=gsdashboard-five.vercel.app (automatically set by Vercel)

@@ -3,19 +3,19 @@
   "github": {
     "silent": true
   },
-
-  "buildCommand": "pnpm build",
-  "installCommand": "pnpm install",
-  "outputDirectory": ".next",
+  "buildCommand": "cd full-kit && pnpm install && pnpm build",
+  "installCommand": "pnpm install --no-frozen-lockfile",
+  "outputDirectory": "full-kit/.next",
   "framework": "nextjs",
   "regions": ["iad1"],
-
-  "rewrites": [
-    {
-      "source": "/starter/(.*)",
-      "destination": "/starter-kit/$1"
+  "functions": {
+    "full-kit/src/app/**/*.tsx": {
+      "maxDuration": 60
+    },
+    "full-kit/src/app/api/**/*.ts": {
+      "maxDuration": 30
     }
-  ],
+  },
   "redirects": [
     {
       "source": "/",

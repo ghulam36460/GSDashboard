@@ -1,14 +1,13 @@
 {
   "framework": "nextjs",
   "buildCommand": "pnpm build",
-  "installCommand": "pnpm install",
-  "env": {
-    "BASE_URL": "https://gsdashboard-five.vercel.app",
-    "API_URL": "https://gsdashboard-five.vercel.app/api",
-    "NEXTAUTH_URL": "https://gsdashboard-five.vercel.app",
-    "NEXTAUTH_SECRET": "gsdashboard_next_auth_secret_key_for_production_2024_secure_random_32chars",
-    "DATABASE_URL": "file:./dev.db",
-    "HOME_PATHNAME": "/dashboards/analytics",
-    "NEXT_PUBLIC_HOME_PATHNAME": "/dashboards/analytics"
+  "installCommand": "pnpm install --no-frozen-lockfile",
+  "functions": {
+    "src/app/**/*.tsx": {
+      "maxDuration": 60
+    },
+    "src/app/api/**/*.ts": {
+      "maxDuration": 30
+    }
   }
 }

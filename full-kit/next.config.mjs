@@ -11,17 +11,9 @@ const nextConfig = {
   // Production optimizations
   experimental: {
     optimizePackageImports: ["@radix-ui/react-icons"],
-    turbo: {
-      rules: {
-        "*.svg": {
-          loaders: ["@svgr/webpack"],
-          as: "*.js",
-        },
-      },
-    },
   },
 
-  // Remove standalone output for better Vercel compatibility
+  // Remove standalone output to fix Windows symlink permission errors
   // output: 'standalone',
 
   // Image optimization for Vercel
