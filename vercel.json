@@ -8,11 +8,6 @@
   "outputDirectory": "full-kit/.next",
   "framework": "nextjs",
   "regions": ["iad1"],
-  "functions": {
-    "full-kit/src/app/api/**/*.{js,ts}": {
-      "maxDuration": 30
-    }
-  },
   "redirects": [
     {
       "source": "/",
