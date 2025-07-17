@@ -19,8 +19,14 @@ import { Toaster } from "@/components/ui/toaster"
 // Define metadata for the application
 // More info: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
 function getValidBaseUrl() {
-  const url = process.env.BASE_URL
-  if (!url) throw new Error("BASE_URL environment variable is missing")
+  const url =
+    process.env.BASE_URL ||
+    process.env.NEXTAUTH_URL ||
+    "https://gsdashboard-five.vercel.app"
+  if (!url || url === "REPLACE_WITH_YOUR_VERCEL_URL") {
+    // Use default URL for production builds
+    return new URL("https://gsdashboard-five.vercel.app")
+  }
   try {
     return new URL(url)
   } catch {

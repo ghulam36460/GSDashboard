@@ -1,3 +1,4 @@
+import { existsSync } from "fs"
 import { dirname, resolve } from "path"
 import { fileURLToPath } from "url"
 
@@ -13,7 +14,8 @@ const compat = new FlatCompat({
 })
 
 const eslintConfig = [
-  includeIgnoreFile(gitignorePath),
+  // Only include gitignore if the file exists
+  ...(existsSync(gitignorePath) ? [includeIgnoreFile(gitignorePath)] : []),
   ...compat.extends(
     "next/core-web-vitals",
     "next/typescript",
