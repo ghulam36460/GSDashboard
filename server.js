@@ -36,20 +36,26 @@ exec('pnpm install', (error, stdout, stderr) => {
     console.error('❌ Error installing dependencies:', error);
     return;
   }
-  
+
   console.log('✅ Dependencies installed successfully');
-  
+
   if (kit === 'full-kit') {
     console.log('🔧 Running Prisma setup for full-kit...');
-    exec('pnpm exec prisma generate', (prismaError, prismaStdout, prismaStderr) => {
-      if (prismaError) {
-        console.error('⚠️  Prisma setup failed, but continuing:', prismaError.message);
-      } else {
-        console.log('✅ Prisma setup completed');
+    exec(
+      'pnpm exec prisma generate',
+      (prismaError, prismaStdout, prismaStderr) => {
+        if (prismaError) {
+          console.error(
+            '⚠️  Prisma setup failed, but continuing:',
+            prismaError.message
+          );
+        } else {
+          console.log('✅ Prisma setup completed');
+        }
+
+        startDevServer();
       }
-      
-      startDevServer();
-    });
+    );
   } else {
     startDevServer();
   }
@@ -58,18 +64,18 @@ exec('pnpm install', (error, stdout, stderr) => {
 function startDevServer() {
   console.log('🌟 Starting development server...');
   console.log('📝 Visit http://localhost:3000 once the server starts\n');
-  
+
   const devProcess = exec('pnpm run dev', (error, stdout, stderr) => {
     if (error) {
       console.error('❌ Error starting dev server:', error);
       return;
     }
   });
-  
+
   // Pipe output to console
   devProcess.stdout.pipe(process.stdout);
   devProcess.stderr.pipe(process.stderr);
-  
+
   // Handle process termination
   process.on('SIGINT', () => {
     console.log('\n🛑 Shutting down server...');

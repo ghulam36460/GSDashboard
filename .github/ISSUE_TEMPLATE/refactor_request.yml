@@ -1,7 +1,7 @@
 name: Refactor Request
 description: Suggest a refactor to improve code structure, readability, or maintainability
 labels: [enhancement, refactor]
-title: "[refactor] "
+title: '[refactor] '
 
 body:
   - type: textarea
