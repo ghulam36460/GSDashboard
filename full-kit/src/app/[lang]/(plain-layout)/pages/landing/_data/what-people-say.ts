@@ -15,7 +15,7 @@ export const whatPeopleSayData: WhatPeopleSayType[] = [
     role: "CTO",
     company: "Acme Inc.",
     quote:
-      "This dashboard template saved us weeks of development. It's clean, flexible, and packed with all the features we needed.",
+      "This GSDashboard template saved us weeks of development. It's clean, flexible, and packed with all the features we needed.",
     avatar: "/images/avatars/female-01.svg",
     rating: 5,
   },
@@ -33,7 +33,7 @@ export const whatPeopleSayData: WhatPeopleSayType[] = [
     role: "Head of Product",
     company: "NimbusCorp",
     quote:
-      "From the design system to the documentation, everything is top-notch. Easily the best dashboard template I've used.",
+      "From the design system to the documentation, everything is top-notch. Easily the best GSDashboard template I've used.",
     avatar: "/images/avatars/male-02.svg",
     rating: 5,
   },

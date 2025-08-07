@@ -51,7 +51,7 @@ export function Auth({
               width={24}
               className="dark:invert"
             />
-            <span>Dashboard</span>
+            <span>GSDashboard</span>
           </Link>
           <LanguageDropdown dictionary={dictionary} />
         </div>

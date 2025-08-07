@@ -38,7 +38,7 @@ export function BottomBarHeader({
           width={24}
           className="dark:invert"
         />
-        <span>Dashboard</span>
+        <span>GSDashboard</span>
       </Link>
       <div className="flex gap-2">
         <NotificationDropdown dictionary={dictionary} />

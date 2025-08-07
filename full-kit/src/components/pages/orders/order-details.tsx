@@ -1,6 +1,6 @@
 "use client"
 
-// Order details component for dashboard
+// Order details component for GSDashboard
 import Link from "next/link"
 import { ArrowLeft, Calendar, CreditCard, Package, Truck } from "lucide-react"
 
@@ -121,7 +121,7 @@ export function OrderDetails({
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-4">
-        <Link href="/dashboard/orders">
+        <Link href="/orders">
           <Button variant="outline" size="sm">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Orders

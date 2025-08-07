@@ -5,7 +5,7 @@ import { getDictionary } from "@/lib/get-dictionary"
 
 import { Layout } from "@/components/layout"
 
-export default async function DashboardLayout(props: {
+export default async function GSDashboardLayout(props: {
   children: ReactNode
   params: Promise<{ lang: LocaleType }>
 }) {

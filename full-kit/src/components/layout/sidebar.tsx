@@ -140,7 +140,7 @@ export function Sidebar({ dictionary }: { dictionary: DictionaryType }) {
             width={24}
             className="dark:invert"
           />
-          <span>Dashboard</span>
+          <span>GSDashboard</span>
         </Link>
         <CommandMenu dictionary={dictionary} buttonClassName="max-w-full" />
       </SidebarHeader>

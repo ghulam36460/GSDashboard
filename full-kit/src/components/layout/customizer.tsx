@@ -81,7 +81,7 @@ export function Customizer() {
               <SheetHeader>
                 <SheetTitle>Customizer</SheetTitle>
                 <SheetDescription>
-                  Pick a style and color for the dashboard.
+                  Pick a style and color for the GSDashboard.
                 </SheetDescription>
               </SheetHeader>
               <div className="space-y-1.5">

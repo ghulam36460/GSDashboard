@@ -20,7 +20,7 @@ export function Hero() {
           Build Smarter, Ship Faster
         </h1>
         <p className="max-w-prose w-full text-lg text-muted-foreground">
-          A complete admin dashboard template with 4 apps, 20+ pages, and
+          A complete GSDashboard template with 4 apps, 20+ pages, and
           everything wired up using React 19, Next.js 15, and Tailwind CSS 4.
         </p>
         <div className="flex gap-x-2">

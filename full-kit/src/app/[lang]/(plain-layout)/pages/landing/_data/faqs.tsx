@@ -2,7 +2,7 @@ import type { FaqType } from "../types"
 
 export const faqsData: FaqType[] = [
   {
-    question: "Is this dashboard template really free?",
+    question: "Is this GSDashboard template really free?",
     answer:
       "Yes! It's 100% free and open-source. You can use it for personal, commercial, or educational projects without paying a cent.",
   },
@@ -19,7 +19,7 @@ export const faqsData: FaqType[] = [
   {
     question: "Is it mobile responsive?",
     answer:
-      "Yes, the dashboard is fully responsive and optimized for all screen sizes, from mobile to desktop.",
+      "Yes, the GSDashboard is fully responsive and optimized for all screen sizes, from mobile to desktop.",
   },
   {
     question: "Can I customize the design?",

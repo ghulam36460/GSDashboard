@@ -2,7 +2,7 @@ import type { NavigationType } from "@/types"
 
 export const navigationsData: NavigationType[] = [
   {
-    title: "Dashboards",
+    title: "GSDashboards",
     items: [
       {
         title: "Analytics",

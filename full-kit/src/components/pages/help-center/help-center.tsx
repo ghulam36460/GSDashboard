@@ -57,7 +57,7 @@ const helpCategories = [
 const popularArticles = [
   {
     id: "1",
-    title: "How to create your first dashboard",
+    title: "How to create your first GSDashboard",
     category: "Getting Started",
     views: 1250,
     helpful: 145,

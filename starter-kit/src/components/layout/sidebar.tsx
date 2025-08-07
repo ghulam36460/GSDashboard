@@ -116,7 +116,7 @@ export function Sidebar() {
             width={24}
             className="dark:invert"
           />
-          <span>Dashboard</span>
+          <span>GSDashboard</span>
         </Link>
         <CommandMenu buttonClassName="max-w-full" />
       </SidebarHeader>

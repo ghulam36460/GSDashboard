@@ -28,7 +28,7 @@ export const pricingData: PricingPlansType[] = [
       "Receive faster response times for support inquiries",
       "Access additional tools and functionalities",
       "Collaborate with up to ten team members",
-      "Tailor the dashboard to fit your team’s needs",
+      "Tailor the GSDashboard to fit your team's needs",
     ],
     isFeatured: true,
     period: "month",

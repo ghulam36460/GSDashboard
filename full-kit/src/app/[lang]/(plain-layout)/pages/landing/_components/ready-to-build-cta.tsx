@@ -12,7 +12,7 @@ export function ReadyToBuildCTA() {
             Ready to build your next project faster?
           </h2>
           <p className="max-w-prose mx-auto text-sm text-muted-foreground">
-            Get started with our free, open-source admin dashboard template — no
+            Get started with our free, open-source GSDashboard template — no
             signup required.
           </p>
         </div>

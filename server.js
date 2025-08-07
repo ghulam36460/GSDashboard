@@ -13,7 +13,7 @@ console.log('• Package Manager: pnpm 10.8.1');
 console.log('• Node.js: >= 22 required');
 console.log('• Database: Prisma ORM (full-kit only)');
 console.log('• Authentication: NextAuth.js (full-kit only)');
-console.log('• Features: Dashboard components, charts, forms, tables\n');
+console.log('• Features: GSDashboard components, charts, forms, tables\n');
 
 // Check which kit to run
 const args = process.argv.slice(2);
