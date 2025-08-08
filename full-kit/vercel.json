@@ -53,7 +53,9 @@
     }
   ],
   "env": {
-    "NEXTAUTH_URL": "https://gsdashbord.vercel.app",
     "NODE_ENV": "production"
-  }
+  },
+  "regions": ["iad1"],
+  "cleanUrls": true,
+  "trailingSlash": false
 }

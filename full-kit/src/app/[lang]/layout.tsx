@@ -37,10 +37,61 @@ function getValidBaseUrl() {
 export const metadata: Metadata = {
   title: {
     template: "%s | GSDashboard",
-    default: "GSDashboard",
+    default: "GSDashboard - Modern Business Dashboard",
   },
-  description: "",
+  description:
+    "A comprehensive business dashboard with analytics, CRM, e-commerce management, and project tracking. Built with Next.js, TypeScript, and modern web technologies.",
   metadataBase: getValidBaseUrl(),
+  keywords: [
+    "dashboard",
+    "analytics",
+    "CRM",
+    "e-commerce",
+    "business management",
+    "project tracking",
+    "Next.js",
+    "TypeScript",
+  ],
+  authors: [{ name: "Ghulam", url: "https://github.com/ghulam36460" }],
+  creator: "Ghulam",
+  openGraph: {
+    title: "GSDashboard - Modern Business Dashboard",
+    description:
+      "Comprehensive business dashboard with analytics, CRM, and e-commerce management",
+    url: getValidBaseUrl().toString(),
+    siteName: "GSDashboard",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "GSDashboard Preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GSDashboard - Modern Business Dashboard",
+    description:
+      "Comprehensive business dashboard with analytics, CRM, and e-commerce management",
+    images: ["/images/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "your-google-verification-code",
+  },
 }
 // More info: https://nextjs.org/docs/app/building-your-application/optimizing/fonts
 const latoFont = Lato({

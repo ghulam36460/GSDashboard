@@ -5,16 +5,31 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
 
 # testing
 /coverage
+coverage/
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+__tests__/
+jest.config.js
 
 # next.js
 /.next/
 /out/
+.next/
+out/
 
 # production
 /build
+build/
+dist/
 
 # misc
 .DS_Store
@@ -24,10 +39,15 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
 # local env files
 .env*.local
 .env
+.env.development
+.env.production
+.env.test
 
 # vercel
 .vercel
@@ -35,14 +55,25 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+tsconfig.tsbuildinfo
+
+# prisma
+prisma/dev.db
+prisma/dev.db-journal
+prisma/*.db*
 
 # IDE
-.vscode
-.idea
+.vscode/
+.idea/
+*.swp
+*.swo
 
 # OS
 Thumbs.db
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
 
 # Logs
 *.log
@@ -51,7 +82,58 @@ logs/
 # Database
 *.db
 *.sqlite
+*.db-journal
 
 # Temporary files
 .tmp/
 .temp/
+tmp/
+temp/
+
+# Cache directories
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Build artifacts
+*.tar.gz
+
+# Security files
+*.key
+*.cert
+*.crt
+*.p12
+*.pfx
+
+# MacOS
+.Spotlight-V100
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+$RECYCLE.BIN/
+Desktop.ini
+ehthumbs.db
+
+# Linux
+*~

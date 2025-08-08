@@ -13,13 +13,21 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
     "format": "prettier --ignore-path .gitignore --write .",
+    "format:check": "prettier --ignore-path .gitignore --check .",
     "migrate": "pnpm exec prisma migrate dev",
     "postinstall": "prisma generate",
     "db:push": "prisma db push",
     "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy",
     "db:seed": "npx tsx prisma/seed.ts",
-    "generate-keys": "node scripts/generate-production-keys.js"
+    "db:studio": "prisma studio",
+    "db:reset": "prisma migrate reset --force",
+    "generate-keys": "node scripts/generate-production-keys.js",
+    "analyze": "ANALYZE=true npm run build",
+    "clean": "rm -rf .next node_modules/.cache"
   },
   "engines": {
     "node": ">=20.x",

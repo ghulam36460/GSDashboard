@@ -13,6 +13,14 @@ const nextConfig = {
     optimizePackageImports: ["@radix-ui/react-icons"],
   },
 
+  // External packages for server components
+  serverExternalPackages: ["@prisma/client"],
+
+  // Performance optimizations
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
+  },
+
   // Remove standalone output to fix Windows symlink permission errors
   // output: 'standalone',
 
@@ -20,6 +28,9 @@ const nextConfig = {
   images: {
     domains: ["localhost"],
     formats: ["image/webp", "image/avif"],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
   },
 
   // See https://nextjs.org/docs/app/building-your-application/routing/redirecting#redirects-in-nextconfigjs
