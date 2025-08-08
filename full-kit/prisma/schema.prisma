@@ -297,14 +297,14 @@ model Payment {
 
 // Notifications
 model Notification {
-  id        String   @id @default(uuid())
-  userId    String
-  type      String   // info, warning, success, error, message
-  title     String
-  message   String
-  isRead    Boolean  @default(false)
-  url       String?
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id      String  @id @default(uuid())
+  userId  String
+  type    String // info, warning, success, error, message
+  title   String
+  message String
+  isRead  Boolean @default(false)
+  url     String?
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
