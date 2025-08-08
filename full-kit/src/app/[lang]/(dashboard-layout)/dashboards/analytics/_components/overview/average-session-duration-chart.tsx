@@ -24,10 +24,11 @@ function ModifiedChartTooltipContent(
   return (
     <ChartTooltipContent
       {...props}
-      payload={props.payload.map((item) => ({
-        ...item,
-        value: formatDuration(Number(item.value)),
-      }))}
+      formatter={(value) => (
+        <span className="font-medium tabular-nums text-foreground">
+          {formatDuration(Number(value))}
+        </span>
+      )}
     />
   )
 }

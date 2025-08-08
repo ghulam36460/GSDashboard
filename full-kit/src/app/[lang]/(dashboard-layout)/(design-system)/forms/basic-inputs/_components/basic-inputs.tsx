@@ -112,8 +112,8 @@ export function BasicInputs() {
           </Popover>
         </div>
         <div className="space-y-1.5">
-          <Label htmlFor="passwardInput">Passward Input</Label>
-          <Input type="password" id="passwardInput" defaultValue="12345678" />
+          <Label htmlFor="passwordInput">Password Input</Label>
+          <Input type="password" id="passwordInput" defaultValue="12345678" />
         </div>
         <div className="space-y-1.5">
           <Label htmlFor="textarea">Textarea</Label>

@@ -5,7 +5,7 @@ import { LogOut, User, UserCog } from "lucide-react"
 import type { DictionaryType } from "@/lib/get-dictionary"
 import type { LocaleType } from "@/types"
 
-import { userData } from "@/data/user"
+import { defaultUserData } from "@/data/user"
 
 import { ensureLocalizedPathname } from "@/lib/i18n"
 import { getInitials } from "@/lib/utils"
@@ -39,9 +39,9 @@ export function UserDropdown({
           aria-label="User"
         >
           <Avatar className="size-9">
-            <AvatarImage src={userData?.avatar} alt="" />
+            <AvatarImage src={defaultUserData?.avatar} alt="" />
             <AvatarFallback className="bg-transparent">
-              {userData?.name && getInitials(userData.name)}
+              {defaultUserData?.name && getInitials(defaultUserData.name)}
             </AvatarFallback>
           </Avatar>
         </Button>
@@ -49,15 +49,15 @@ export function UserDropdown({
       <DropdownMenuContent forceMount>
         <DropdownMenuLabel className="flex gap-2">
           <Avatar>
-            <AvatarImage src={userData?.avatar} alt="Avatar" />
+            <AvatarImage src={defaultUserData?.avatar} alt="Avatar" />
             <AvatarFallback className="bg-transparent">
-              {userData?.name && getInitials(userData.name)}
+              {defaultUserData?.name && getInitials(defaultUserData.name)}
             </AvatarFallback>
           </Avatar>
           <div className="flex flex-col overflow-hidden">
             <p className="text-sm font-medium truncate">John Doe</p>
             <p className="text-xs text-muted-foreground font-semibold truncate">
-              {userData?.email}
+              {defaultUserData?.email}
             </p>
           </div>
         </DropdownMenuLabel>

@@ -215,7 +215,7 @@ export function Customizer() {
                     </Button>
                     <Button
                       variant={direction === "rtl" ? "secondary" : "outline"}
-                      onClick={() => handleSetLocale("ar")}
+                      onClick={() => handleSetLocale("ur")}
                     >
                       <AlignRight className="shrink-0 h-4 w-4 me-2" />
                       RTL

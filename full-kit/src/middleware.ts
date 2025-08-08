@@ -3,13 +3,18 @@ import { getToken } from "next-auth/jwt"
 
 import type { NextRequest } from "next/server"
 
-import { isGuestRoute, isPublicRoute } from "@/lib/auth-routes"
+import {
+  isGuestRoute,
+  isPublicRoute,
+  requiredRoleForRoute,
+} from "@/lib/auth-routes"
 import {
   ensureLocalizedPathname,
   getLocaleFromPathname,
   getPreferredLocale,
   isPathnameMissingLocale,
 } from "@/lib/i18n"
+import { securityMiddleware } from "@/lib/security-middleware"
 import { ensureRedirectPathname, ensureWithoutPrefix } from "@/lib/utils"
 
 function redirect(pathname: string, request: NextRequest) {
@@ -33,7 +38,18 @@ function redirect(pathname: string, request: NextRequest) {
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
-  console.log(pathname)
+
+  // Apply security middleware first
+  const securityResponse = await securityMiddleware(request)
+
+  // If security middleware returns a response (rate limit, CSRF failure, etc.), return it
+  if (
+    securityResponse instanceof NextResponse &&
+    securityResponse.status !== 200
+  ) {
+    return securityResponse
+  }
+
   const locale = getLocaleFromPathname(pathname)
   const pathnameWithoutLocale = ensureWithoutPrefix(pathname, `/${locale}`)
   const isNotPublic = !isPublicRoute(pathnameWithoutLocale)
@@ -48,6 +64,31 @@ export async function middleware(request: NextRequest) {
     // Redirect authenticated users away from guest routes
     if (isAuthenticated && isGuest) {
       return redirect(process.env.HOME_PATHNAME || "/", request)
+    }
+
+    // If authenticated but onboarding not completed, force onboarding page
+    if (
+      isAuthenticated &&
+      pathnameWithoutLocale !== "/onboarding" &&
+      (token as unknown as { onboardingCompleted?: boolean })
+        .onboardingCompleted === false &&
+      !request.cookies.get("onboarding-complete")
+    ) {
+      let redirectPathname = "/onboarding"
+      if (pathnameWithoutLocale !== "") {
+        redirectPathname = ensureRedirectPathname(redirectPathname, pathname)
+      }
+      return redirect(redirectPathname, request)
+    }
+
+    // Enforce role-based access for certain routes
+    const requiredRole = requiredRoleForRoute(pathnameWithoutLocale)
+    if (isAuthenticated && requiredRole) {
+      const userRole = (token as unknown as { role?: "ADMIN" | "USER" }).role
+      if (requiredRole === "ADMIN" && userRole !== "ADMIN") {
+        // Non-admin trying to access an admin-only route
+        return redirect(process.env.HOME_PATHNAME || "/", request)
+      }
     }
 
     // Redirect unauthenticated users from protected routes to sign-in
@@ -77,7 +118,34 @@ export async function middleware(request: NextRequest) {
    * See https://nextjs.org/docs/app/building-your-application/routing/redirecting#redirects-in-nextconfigjs
    */
 
-  return NextResponse.next()
+  // Apply security headers to the response
+  const response = NextResponse.next()
+
+  // Copy security headers from security middleware
+  if (securityResponse instanceof NextResponse) {
+    securityResponse.headers.forEach((value, key) => {
+      if (
+        key.startsWith("x-") ||
+        key.includes("security") ||
+        key.includes("content-security-policy")
+      ) {
+        response.headers.set(key, value)
+      }
+    })
+
+    // Copy CSRF token cookie
+    const csrfCookie = securityResponse.cookies.get("csrf-token")
+    if (csrfCookie) {
+      response.cookies.set("csrf-token", csrfCookie.value, {
+        httpOnly: false,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "strict",
+        maxAge: 60 * 60 * 24, // 24 hours
+      })
+    }
+  }
+
+  return response
 }
 
 export const config = {

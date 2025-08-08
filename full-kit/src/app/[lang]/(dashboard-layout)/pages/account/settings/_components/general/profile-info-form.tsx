@@ -47,7 +47,34 @@ export function ProfileInfoForm({ user }: { user: UserType }) {
   const { isSubmitting, isDirty } = form.formState
   const isDisabled = isSubmitting || !isDirty // Disable button if form is unchanged or submitting
 
-  async function onSubmit(_data: ProfileInfoFormType) {}
+  async function onSubmit(_data: ProfileInfoFormType) {
+    try {
+      const payload = {
+        name: `${_data.firstName} ${_data.lastName}`.trim(),
+        username: _data.username,
+        phone: _data.phoneNumber,
+        addressLine1: _data.address,
+        state: _data.state,
+        country: _data.country,
+        postalCode: _data.zipCode,
+        timeZone: _data.timeZone,
+      }
+      const res = await fetch("/api/user/profile", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      })
+      if (!res.ok) {
+        const msg = await res.json().catch(() => ({}))
+        throw new Error(
+          msg?.message || msg?.error || "Failed to update profile"
+        )
+      }
+      form.reset(_data)
+    } catch (e) {
+      console.error(e)
+    }
+  }
 
   function handleResetForm() {
     form.reset() // Reset the form to the initial state
@@ -350,7 +377,7 @@ export function ProfileInfoForm({ user }: { user: UserType }) {
                       "German",
                       "Chinese",
                       "Japanese",
-                      "Arabic",
+                      "Urdu",
                       "portuguese",
                       "Russian",
                       "Hindi",
@@ -438,6 +465,7 @@ export function ProfileInfoForm({ user }: { user: UserType }) {
                       "CHF",
                       "CNY",
                       "INR",
+                      "PKR",
                       "BRL",
                     ].map((currency) => (
                       <SelectItem key={currency} value={currency.split(" ")[0]}>

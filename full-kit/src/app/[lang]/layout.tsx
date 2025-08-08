@@ -1,4 +1,4 @@
-import { Cairo, Lato } from "next/font/google"
+import { Lato, Noto_Sans } from "next/font/google"
 import { getServerSession } from "next-auth"
 
 import { i18n } from "@/configs/i18n"
@@ -49,14 +49,14 @@ const latoFont = Lato({
   style: ["normal", "italic"],
   variable: "--font-lato",
 })
-const cairoFont = Cairo({
-  subsets: ["arabic"],
+const urduFont = Noto_Sans({
+  subsets: ["latin"],
   weight: ["400", "700"],
   style: ["normal"],
-  variable: "--font-cairo",
+  variable: "--font-urdu",
 })
 
-export default async function RootLayout(props: {
+export default async function LangLayout(props: {
   children: ReactNode
   params: Promise<{ lang: LocaleType }>
 }) {
@@ -68,21 +68,21 @@ export default async function RootLayout(props: {
   const direction = i18n.localeDirection[params.lang]
 
   return (
-    <html lang={params.lang} dir={direction} suppressHydrationWarning>
-      <body
-        className={cn(
-          "[&:lang(en)]:font-lato [&:lang(ar)]:font-cairo", // Set font styles based on the language
-          "bg-background text-foreground antialiased overscroll-none", // Set background, text, , anti-aliasing styles, and overscroll behavior
-          latoFont.variable, // Include Lato font variable
-          cairoFont.variable // Include Cairo font variable
-        )}
-      >
-        <Providers locale={params.lang} direction={direction} session={session}>
-          {children}
-          <Toaster />
-          <Sonner />
-        </Providers>
-      </body>
-    </html>
+    <div
+      className={cn(
+        "[&:lang(en)]:font-lato [&:lang(ur)]:font-urdu",
+        "bg-background text-foreground antialiased overscroll-none",
+        latoFont.variable,
+        urduFont.variable
+      )}
+      lang={params.lang}
+      dir={direction}
+    >
+      <Providers locale={params.lang} direction={direction} session={session}>
+        {children}
+        <Toaster />
+        <Sonner />
+      </Providers>
+    </div>
   )
 }

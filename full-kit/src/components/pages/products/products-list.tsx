@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import {
   Edit,
   Eye,
@@ -33,56 +33,93 @@ import {
   TableRow,
 } from "@/components/ui/table"
 
-const mockProducts = [
-  {
-    id: "1",
-    name: "Wireless Headphones",
-    category: "Electronics",
-    price: 99.99,
-    stock: 45,
-    status: "Active",
-    image: "/images/products/headphones.jpg",
-  },
-  {
-    id: "2",
-    name: "Smart Watch",
-    category: "Electronics",
-    price: 199.99,
-    stock: 23,
-    status: "Active",
-    image: "/images/products/watch.jpg",
-  },
-  {
-    id: "3",
-    name: "Laptop Stand",
-    category: "Accessories",
-    price: 49.99,
-    stock: 0,
-    status: "Out of Stock",
-    image: "/images/products/stand.jpg",
-  },
-  {
-    id: "4",
-    name: "USB Cable",
-    category: "Accessories",
-    price: 12.99,
-    stock: 156,
-    status: "Active",
-    image: "/images/products/cable.jpg",
-  },
-]
+type Product = {
+  id: string
+  name: string
+  category: string | null
+  price: number
+  stock: number | null
+  status: string | null
+}
+
+type ProductsApiResponse = {
+  total: number
+  page: number
+  pageSize: number
+  items: Product[]
+}
 
 export function ProductsList({
   dictionary: _,
 }: {
   dictionary: DictionaryType
 }) {
+  const [page, setPage] = useState(1)
+  const [pageSize, setPageSize] = useState(10)
   const [searchTerm, setSearchTerm] = useState("")
+  const [debouncedSearch, setDebouncedSearch] = useState("")
+  const [sort, setSort] = useState<
+    | "createdAt:desc"
+    | "createdAt:asc"
+    | "name:asc"
+    | "name:desc"
+    | "price:asc"
+    | "price:desc"
+  >("createdAt:desc")
+  const [data, setData] = useState<ProductsApiResponse | null>(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  const filteredProducts = mockProducts.filter(
-    (product) =>
-      product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      product.category.toLowerCase().includes(searchTerm.toLowerCase())
+  // Debounce search input
+  useEffect(() => {
+    const t = setTimeout(() => setDebouncedSearch(searchTerm), 300)
+    return () => clearTimeout(t)
+  }, [searchTerm])
+
+  const query = useMemo(() => {
+    const params = new URLSearchParams()
+    params.set("page", String(page))
+    params.set("pageSize", String(pageSize))
+    params.set("sort", sort)
+    if (debouncedSearch) params.set("q", debouncedSearch)
+    return params.toString()
+  }, [page, pageSize, sort, debouncedSearch])
+
+  useEffect(() => {
+    let cancelled = false
+    async function run() {
+      setLoading(true)
+      setError(null)
+      try {
+        const res = await fetch(`/api/products?${query}`)
+        if (!res.ok) {
+          const payload = await res.json().catch(() => ({}))
+          throw new Error(payload?.error || `Request failed: ${res.status}`)
+        }
+        const payload: ProductsApiResponse = await res.json()
+        if (!cancelled) setData(payload)
+      } catch (e) {
+        if (!cancelled)
+          setError(e instanceof Error ? e.message : "Failed to load products")
+      } finally {
+        if (!cancelled) setLoading(false)
+      }
+    }
+    run()
+    return () => {
+      cancelled = true
+    }
+  }, [query])
+
+  const items = data?.items ?? []
+  const total = data?.total ?? 0
+  const activeOnPage = items.filter(
+    (p) => (p.status || "").toLowerCase() === "active"
+  ).length
+  const outOfStockOnPage = items.filter((p) => (p.stock ?? 0) === 0).length
+  const pageTotalValue = items.reduce(
+    (acc, p) => acc + (p.price || 0) * (p.stock ?? 0),
+    0
   )
 
   return (
@@ -106,7 +143,7 @@ export function ProductsList({
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{mockProducts.length}</div>
+            <div className="text-2xl font-bold">{total}</div>
           </CardContent>
         </Card>
         <Card>
@@ -116,9 +153,7 @@ export function ProductsList({
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
-              {mockProducts.filter((p) => p.status === "Active").length}
-            </div>
+            <div className="text-2xl font-bold">{activeOnPage}</div>
           </CardContent>
         </Card>
         <Card>
@@ -126,9 +161,7 @@ export function ProductsList({
             <CardTitle className="text-sm font-medium">Out of Stock</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
-              {mockProducts.filter((p) => p.stock === 0).length}
-            </div>
+            <div className="text-2xl font-bold">{outOfStockOnPage}</div>
           </CardContent>
         </Card>
         <Card>
@@ -137,10 +170,7 @@ export function ProductsList({
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              $
-              {mockProducts
-                .reduce((acc, p) => acc + p.price * p.stock, 0)
-                .toFixed(2)}
+              ${pageTotalValue.toFixed(2)}
             </div>
           </CardContent>
         </Card>
@@ -150,7 +180,7 @@ export function ProductsList({
         <CardHeader>
           <div className="flex justify-between items-center">
             <CardTitle>Product List</CardTitle>
-            <div className="flex gap-2">
+            <div className="flex gap-2 items-center">
               <div className="relative">
                 <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
                 <Input
@@ -160,6 +190,22 @@ export function ProductsList({
                   className="pl-8 w-64"
                 />
               </div>
+              <select
+                className="h-9 rounded-md border px-2 text-sm"
+                value={sort}
+                onChange={(e) => {
+                  setPage(1)
+                  setSort(e.target.value as typeof sort)
+                }}
+                aria-label="Sort products"
+              >
+                <option value="createdAt:desc">Newest</option>
+                <option value="createdAt:asc">Oldest</option>
+                <option value="name:asc">Name A-Z</option>
+                <option value="name:desc">Name Z-A</option>
+                <option value="price:asc">Price Low→High</option>
+                <option value="price:desc">Price High→Low</option>
+              </select>
               <Button variant="outline" size="sm">
                 <Filter className="h-4 w-4 mr-2" />
                 Filter
@@ -168,6 +214,9 @@ export function ProductsList({
           </div>
         </CardHeader>
         <CardContent>
+          {error ? (
+            <div className="text-destructive text-sm">{error}</div>
+          ) : null}
           <Table>
             <TableHeader>
               <TableRow>
@@ -180,51 +229,104 @@ export function ProductsList({
               </TableRow>
             </TableHeader>
             <TableBody>
-              {filteredProducts.map((product) => (
-                <TableRow key={product.id}>
-                  <TableCell>
-                    <div className="font-medium">{product.name}</div>
-                  </TableCell>
-                  <TableCell>{product.category}</TableCell>
-                  <TableCell>${product.price}</TableCell>
-                  <TableCell>{product.stock}</TableCell>
-                  <TableCell>
-                    <Badge
-                      variant={
-                        product.status === "Active" ? "default" : "destructive"
-                      }
-                    >
-                      {product.status}
-                    </Badge>
-                  </TableCell>
-                  <TableCell className="text-right">
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" className="h-8 w-8 p-0">
-                          <MoreHorizontal className="h-4 w-4" />
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end">
-                        <DropdownMenuItem>
-                          <Eye className="mr-2 h-4 w-4" />
-                          View
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                          <Edit className="mr-2 h-4 w-4" />
-                          Edit
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem className="text-destructive">
-                          <Trash2 className="mr-2 h-4 w-4" />
-                          Delete
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </TableCell>
+              {loading && (
+                <TableRow>
+                  <TableCell colSpan={6}>Loading...</TableCell>
                 </TableRow>
-              ))}
+              )}
+              {!loading && items.length === 0 && (
+                <TableRow>
+                  <TableCell colSpan={6}>No products found</TableCell>
+                </TableRow>
+              )}
+              {!loading &&
+                items.length > 0 &&
+                items.map((product) => (
+                  <TableRow key={product.id}>
+                    <TableCell>
+                      <div className="font-medium">{product.name}</div>
+                    </TableCell>
+                    <TableCell>{product.category ?? "-"}</TableCell>
+                    <TableCell>${Number(product.price).toFixed(2)}</TableCell>
+                    <TableCell>{product.stock ?? 0}</TableCell>
+                    <TableCell>
+                      <Badge
+                        variant={
+                          (product.status || "").toLowerCase() === "active"
+                            ? "default"
+                            : "destructive"
+                        }
+                      >
+                        {product.status ?? "Inactive"}
+                      </Badge>
+                    </TableCell>
+                    <TableCell className="text-right">
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button variant="ghost" className="h-8 w-8 p-0">
+                            <MoreHorizontal className="h-4 w-4" />
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end">
+                          <DropdownMenuItem>
+                            <Eye className="mr-2 h-4 w-4" />
+                            View
+                          </DropdownMenuItem>
+                          <DropdownMenuItem>
+                            <Edit className="mr-2 h-4 w-4" />
+                            Edit
+                          </DropdownMenuItem>
+                          <DropdownMenuSeparator />
+                          <DropdownMenuItem className="text-destructive">
+                            <Trash2 className="mr-2 h-4 w-4" />
+                            Delete
+                          </DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    </TableCell>
+                  </TableRow>
+                ))}
             </TableBody>
           </Table>
+          <div className="mt-4 flex items-center justify-between">
+            <div className="text-sm text-muted-foreground">
+              Page {data?.page ?? page} of{" "}
+              {Math.max(1, Math.ceil(total / pageSize))}
+            </div>
+            <div className="flex items-center gap-2">
+              <select
+                className="h-9 rounded-md border px-2 text-sm"
+                value={pageSize}
+                onChange={(e) => {
+                  setPage(1)
+                  setPageSize(Number(e.target.value))
+                }}
+                aria-label="Rows per page"
+              >
+                {[10, 20, 50, 100].map((n) => (
+                  <option key={n} value={n}>
+                    {n} / page
+                  </option>
+                ))}
+              </select>
+              <Button
+                variant="outline"
+                size="sm"
+                disabled={page <= 1 || loading}
+                onClick={() => setPage((p) => Math.max(1, p - 1))}
+              >
+                Prev
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                disabled={page >= Math.ceil(total / pageSize) || loading}
+                onClick={() => setPage((p) => p + 1)}
+              >
+                Next
+              </Button>
+            </div>
+          </div>
         </CardContent>
       </Card>
     </div>

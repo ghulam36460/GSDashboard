@@ -33,6 +33,13 @@ export function RegisterForm() {
 
   const form = useForm<RegisterFormType>({
     resolver: zodResolver(RegisterSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      username: "",
+      email: "",
+      password: "",
+    },
   })
 
   const locale = params.lang as LocaleType
@@ -44,7 +51,7 @@ export function RegisterForm() {
     const { firstName, lastName, username, email, password } = data
 
     try {
-      const res = await fetch("/api/register", {
+      const res = await fetch("/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -173,7 +180,7 @@ export function RegisterForm() {
         </div>
 
         <ButtonLoading isLoading={isSubmitting} disabled={isDisabled}>
-          Sign In with Email
+          Create Account
         </ButtonLoading>
         <div className="-mt-4 text-center text-sm">
           Already have an account?{" "}

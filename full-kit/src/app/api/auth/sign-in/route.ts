@@ -1,25 +1,50 @@
 import { NextResponse } from "next/server"
-
-import { userData } from "@/data/user"
+import { compare } from "bcryptjs"
 
 import { SignInSchema } from "@/schemas/sign-in-schema"
 
+import { db } from "@/lib/prisma"
+
 export async function POST(req: Request) {
-  const body = await req.json()
-  const parsedData = SignInSchema.safeParse(body)
-
-  // If validation fails, return an error response with a 400 status
-  if (!parsedData.success) {
-    return NextResponse.json(parsedData.error, { status: 400 })
-  }
-
-  const { email, password } = parsedData.data
-
   try {
-    // If provided email and password match the stored user data
-    if (userData.email !== email || userData.password !== password) {
+    const body = await req.json()
+    const parsedData = SignInSchema.safeParse(body)
+
+    // If validation fails, return an error response with a 400 status
+    if (!parsedData.success) {
+      return NextResponse.json(parsedData.error, { status: 400 })
+    }
+
+    const { email, password } = parsedData.data
+
+    // Find user by email
+    const user = await db.user.findUnique({
+      where: { email },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        password: true,
+        avatar: true,
+        status: true,
+        role: true,
+        onboardingCompleted: true,
+      },
+    })
+
+    if (!user || !user.password) {
       return NextResponse.json(
-        { message: "Invalid email or password", email },
+        { message: "Invalid email or password" },
+        { status: 401 }
+      )
+    }
+
+    // Verify password
+    const isPasswordValid = await compare(password, user.password)
+
+    if (!isPasswordValid) {
+      return NextResponse.json(
+        { message: "Invalid email or password" },
         { status: 401 }
       )
     }
@@ -27,11 +52,13 @@ export async function POST(req: Request) {
     // Return success response with user data if credentials are correct
     return NextResponse.json(
       {
-        id: userData.id,
-        name: userData.name,
-        email: userData.email,
-        avatar: userData.avatar,
-        status: userData.status,
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        avatar: user.avatar,
+        status: user.status,
+        role: user.role,
+        onboardingCompleted: user.onboardingCompleted,
       },
       { status: 200 }
     )

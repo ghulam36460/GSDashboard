@@ -23,10 +23,11 @@ function ModifiedChartTooltipContent(
   return (
     <ChartTooltipContent
       {...props}
-      payload={props.payload.map((item) => ({
-        ...item,
-        value: formatPercent(Number(item.value)),
-      }))}
+      formatter={(value) => (
+        <span className="font-medium tabular-nums text-foreground">
+          {formatPercent(Number(value))}
+        </span>
+      )}
     />
   )
 }

@@ -23,7 +23,7 @@ function ModifiedChartTooltipContent(
   return (
     <ChartTooltipContent
       {...props}
-      formatter={(value, name, item, index) => (
+      formatter={(value, name, item, index, rawPayload) => (
         <>
           <div
             className="shrink-0 h-2.5 w-2.5 rounded-sm bg-(--color-bg)"
@@ -43,7 +43,9 @@ function ModifiedChartTooltipContent(
             <div className="flex basis-full items-center border-t mt-1.5 pt-1.5 text-sm font-medium text-foreground">
               Churn Rate
               <div className="flex items-baseline gap-0.5 ms-auto font-mono font-medium tabular-nums text-foreground">
-                {formatPercent(item.payload.churnRate)}
+                {formatPercent(
+                  Number((rawPayload as { churnRate?: number }).churnRate ?? 0)
+                )}
               </div>
             </div>
           )}
@@ -89,7 +91,7 @@ export function ChurnRateChart({ data }: { data: ChurnRateType["months"] }) {
           <LabelList
             position="top"
             dataKey="churnRate"
-            formatter={(value: number) => formatPercent(value)}
+            formatter={(label) => formatPercent(Number(label))}
             fontWeight={700}
           />
           {data.map((item) => (

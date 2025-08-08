@@ -1,6 +1,6 @@
 import { ImageIcon, MapPin, Video } from "lucide-react"
 
-import { userData } from "@/data/user"
+import { defaultUserData, getUserData } from "@/data/user"
 
 import { getInitials } from "@/lib/utils"
 
@@ -8,7 +8,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 
-export function ProfileContentCreatePost() {
+export async function ProfileContentCreatePost() {
+  const userData = (await getUserData()) || defaultUserData
+
   return (
     <Card asChild>
       <article aria-label="Create a post">

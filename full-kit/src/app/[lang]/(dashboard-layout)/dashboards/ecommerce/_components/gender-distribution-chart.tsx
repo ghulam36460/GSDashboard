@@ -35,8 +35,8 @@ function ModifiedChartTooltipContent(
       payload={[
         {
           ...item,
-          name: item.payload.name,
-          value: item.payload.value,
+          name: String((item.payload as Record<string, unknown>).name ?? ""),
+          value: Number((item.payload as Record<string, unknown>).value ?? 0),
         },
       ]}
     />

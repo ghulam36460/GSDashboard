@@ -1,9 +1,7 @@
 import { z } from "zod"
 
 const BankSchema = z.object({
-  paymentType: z.enum(["bank", "card"], {
-    required_error: "You need to select a payment type.",
-  }),
+  paymentType: z.enum(["bank", "card"]),
   accountNumber: z
     .string()
     .min(10, "Account number must be at least 10 digits.")
@@ -17,9 +15,7 @@ const BankSchema = z.object({
 })
 
 const CardSchema = z.object({
-  paymentType: z.enum(["bank", "card"], {
-    required_error: "You need to select a payment type.",
-  }),
+  paymentType: z.enum(["bank", "card"]),
   cardNumber: z
     .string()
     .min(13, "Card number must be at least 13 digits")

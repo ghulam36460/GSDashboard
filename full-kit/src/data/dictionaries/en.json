@@ -1,5 +1,6 @@
 {
   "navigation": {
+    "gsdashboards": "GSDashboards",
     "dashboards": "Dashboards",
     "analytics": "Analytics",
     "crm": "CRM",
@@ -20,6 +21,7 @@
     "chat": "Chat",
     "calendar": "Calendar",
     "kanban": "Kanban",
+    "projectBoard": "Project Board",
     "todo": "Todo",
     "authentication": "Authentication",
     "forgotPassword": "Forgot Password",
@@ -132,6 +134,7 @@
     "language": {
       "language": "Language",
       "english": "English",
+      "urdu": "Urdu",
       "arabic": "Arabic"
     },
     "mode": {

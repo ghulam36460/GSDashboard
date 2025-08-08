@@ -6,10 +6,10 @@ import Image from "@tiptap/extension-image"
 import Link from "@tiptap/extension-link"
 import Placeholder from "@tiptap/extension-placeholder"
 import TextAlign from "@tiptap/extension-text-align"
-import TextStyle from "@tiptap/extension-text-style"
+import { TextStyle } from "@tiptap/extension-text-style"
 import Typography from "@tiptap/extension-typography"
 import Underline from "@tiptap/extension-underline"
-import { BubbleMenu, EditorContent, useEditor } from "@tiptap/react"
+import { EditorContent, useEditor } from "@tiptap/react"
 import StarterKit from "@tiptap/starter-kit"
 
 import type { UseEditorOptions } from "@tiptap/react"
@@ -86,22 +86,8 @@ export function Editor({
 
   return (
     <Card>
-      {bubbleMenu ? (
-        <BubbleMenu
-          className="z-50 h-auto rounded-md border bg-popover text-popover-foreground shadow-md outline-hidden"
-          editor={editor}
-          tippyOptions={{
-            duration: 100,
-            maxWidth: "98vw",
-            appendTo: document.body,
-            zIndex: 50,
-          }}
-        >
-          <EditorMenuBar editor={editor} />
-        </BubbleMenu>
-      ) : (
-        <EditorMenuBar editor={editor} />
-      )}
+      {/* BubbleMenu component was removed from @tiptap/react v3. */}
+      <EditorMenuBar editor={editor} />
       <ScrollArea
         className={cn(
           "flex flex-col min-h-9 rounded-md cursor-text",

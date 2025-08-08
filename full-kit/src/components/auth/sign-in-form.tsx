@@ -8,8 +8,6 @@ import { useForm } from "react-hook-form"
 
 import type { LocaleType, SignInFormType } from "@/types"
 
-import { userData } from "@/data/user"
-
 import { SignInSchema } from "@/schemas/sign-in-schema"
 
 import { ensureLocalizedPathname } from "@/lib/i18n"
@@ -42,8 +40,8 @@ export function SignInForm() {
   const form = useForm<SignInFormType>({
     resolver: zodResolver(SignInSchema),
     defaultValues: {
-      email: userData.email,
-      password: userData.password,
+      email: "",
+      password: "",
     },
   })
 
@@ -65,7 +63,8 @@ export function SignInForm() {
         throw new Error(result.error)
       }
 
-      router.push(redirectPathname)
+      // Always navigate to a localized path to avoid 404s
+      router.push(ensureLocalizedPathname(redirectPathname, locale))
     } catch (error) {
       toast({
         variant: "destructive",

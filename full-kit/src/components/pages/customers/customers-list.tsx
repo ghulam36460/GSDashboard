@@ -19,50 +19,51 @@ import {
   TableRow,
 } from "@/components/ui/table"
 
-const mockCustomers = [
+interface Customer {
+  id: string
+  name: string
+  email: string
+  phone: string
+  avatar: string
+  location: string
+  orders: number
+  totalSpent: number
+  status: "VIP" | "Active" | "New"
+}
+
+const mockCustomers: Customer[] = [
   {
     id: "1",
     name: "John Doe",
     email: "john@example.com",
-    phone: "+1 (555) 123-4567",
+    phone: "+1 234 567 8900",
+    avatar: "/images/avatars/male-01.svg",
     location: "New York, USA",
     orders: 15,
-    totalSpent: 1234.56,
-    status: "Active",
-    avatar: "/images/avatars/male-01.svg",
+    totalSpent: 2500,
+    status: "VIP",
   },
   {
     id: "2",
     name: "Jane Smith",
     email: "jane@example.com",
-    phone: "+1 (555) 987-6543",
+    phone: "+1 234 567 8901",
+    avatar: "/images/avatars/female-01.svg",
     location: "Los Angeles, USA",
     orders: 8,
-    totalSpent: 856.22,
+    totalSpent: 1200,
     status: "Active",
-    avatar: "/images/avatars/female-01.svg",
   },
   {
     id: "3",
     name: "Bob Johnson",
     email: "bob@example.com",
-    phone: "+1 (555) 456-7890",
-    location: "Chicago, USA",
-    orders: 23,
-    totalSpent: 2145.78,
-    status: "VIP",
+    phone: "+1 234 567 8902",
     avatar: "/images/avatars/male-02.svg",
-  },
-  {
-    id: "4",
-    name: "Alice Brown",
-    email: "alice@example.com",
-    phone: "+1 (555) 321-0987",
-    location: "Miami, USA",
+    location: "Chicago, USA",
     orders: 3,
-    totalSpent: 245.99,
+    totalSpent: 450,
     status: "New",
-    avatar: "/images/avatars/female-02.svg",
   },
 ]
 

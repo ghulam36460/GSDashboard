@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 
-import { userData } from "@/data/user"
+import { defaultUserData } from "@/data/user"
 
 import { AccountRecoveryOptions } from "./_components/account-recovery-options"
 import { ChangePassword } from "./_components/change-password"
@@ -17,8 +17,8 @@ export default function SecurityPage() {
   return (
     <div className="grid gap-4">
       <ChangePassword />
-      <SecurityPreferences user={userData} />
-      <AccountRecoveryOptions user={userData} />
+      <SecurityPreferences user={defaultUserData} />
+      <AccountRecoveryOptions user={defaultUserData} />
       <RecentLogs />
     </div>
   )

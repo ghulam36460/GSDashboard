@@ -1,29 +1,82 @@
+import { getServerSession } from "next-auth"
+
 import type { UserType } from "@/types"
 
-export const userData: UserType = {
-  id: "1",
-  firstName: "John",
-  lastName: "Doe",
-  name: "John Doe",
-  password: "StrongPass123",
-  username: "john.doe",
-  role: "Next.js Developer",
-  avatar: "/images/avatars/male-01.svg",
+import { authOptions } from "@/configs/next-auth"
+import { db } from "@/lib/prisma"
+
+export async function getUserData(): Promise<UserType | null> {
+  const session = await getServerSession(authOptions)
+
+  if (!session?.user?.email) {
+    return null
+  }
+
+  const user = await db.user.findUnique({
+    where: { email: session.user.email },
+    include: {
+      preferences: true,
+    },
+  })
+
+  if (!user) {
+    return null
+  }
+
+  return {
+    id: user.id,
+    firstName: user.name.split(" ")[0] || "",
+    lastName: user.name.split(" ").slice(1).join(" ") || "",
+    name: user.name,
+    password: "", // Never expose password
+    username: user.username || "",
+    role: "",
+    avatar: user.avatar || "/images/avatars/default-avatar.svg",
+    background: user.profileBackground || "",
+    status: user.status,
+    phoneNumber: "",
+    email: user.email || "",
+    state: "",
+    country: "",
+    address: "",
+    zipCode: "",
+    language: "English",
+    timeZone: "GMT+00:00",
+    currency: "USD",
+    organization: "",
+    twoFactorAuth: false,
+    loginAlerts: true,
+    accountReoveryOption: "email",
+    connections: 0,
+    followers: 0,
+  }
+}
+
+// Default fallback for components that need a user object
+export const defaultUserData: UserType = {
+  id: "",
+  firstName: "",
+  lastName: "",
+  name: "New User",
+  password: "",
+  username: "",
+  role: "",
+  avatar: "/images/avatars/default-avatar.svg",
   background: "",
   status: "ONLINE",
-  phoneNumber: "+923001234567",
-  email: "john.doe@example.com",
-  state: "Punjab",
-  country: "Pakistan",
-  address: "123 Main Street, Lahore",
-  zipCode: "54000",
+  phoneNumber: "",
+  email: "",
+  state: "",
+  country: "",
+  address: "",
+  zipCode: "",
   language: "English",
-  timeZone: "GMT+05:00",
-  currency: "PKR",
-  organization: "Tech Innovations Inc.",
+  timeZone: "GMT+00:00",
+  currency: "USD",
+  organization: "",
   twoFactorAuth: false,
   loginAlerts: true,
   accountReoveryOption: "email",
-  connections: 1212,
-  followers: 3300,
+  connections: 0,
+  followers: 0,
 }

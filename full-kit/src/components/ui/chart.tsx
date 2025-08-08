@@ -119,16 +119,39 @@ ${colorConfig
 
 export const ChartTooltip = RechartsPrimitive.Tooltip
 
-type ChartTooltipContentProps = ComponentProps<
-  typeof RechartsPrimitive.Tooltip
-> &
-  ComponentProps<"div"> & {
-    hideLabel?: boolean
-    hideIndicator?: boolean
-    indicator?: "line" | "dot" | "dashed"
-    nameKey?: string
-    labelKey?: string
-  }
+type TooltipPayloadItem = {
+  color?: string
+  dataKey?: string
+  name?: string
+  value?: number
+  payload: Record<string, unknown>
+}
+
+type ChartTooltipContentProps = ComponentProps<"div"> & {
+  // Recharts tooltip render props (subset)
+  active?: boolean
+  payload?: TooltipPayloadItem[]
+  label?: string | number | undefined
+  // Customizations
+  hideLabel?: boolean
+  hideIndicator?: boolean
+  indicator?: "line" | "dot" | "dashed"
+  nameKey?: string
+  labelKey?: string
+  labelFormatter?: (
+    value: string | number | undefined,
+    payload?: TooltipPayloadItem[]
+  ) => ReactNode
+  labelClassName?: string
+  formatter?: (
+    value: number,
+    name: string | number,
+    item: TooltipPayloadItem,
+    index: number,
+    rawPayload: Record<string, unknown>
+  ) => ReactNode
+  color?: string
+}
 
 export function ChartTooltipContent({
   active,
@@ -161,9 +184,13 @@ export function ChartTooltipContent({
         : itemConfig?.label
 
     if (labelFormatter) {
+      const primitiveLabel =
+        typeof value === "string" || typeof value === "number"
+          ? value
+          : undefined
       return (
         <div className={cn("font-medium", labelClassName)}>
-          {labelFormatter(value, payload)}
+          {labelFormatter(primitiveLabel, payload)}
         </div>
       )
     }
@@ -269,11 +296,18 @@ export function ChartTooltipContent({
 
 export const ChartLegend = RechartsPrimitive.Legend
 
-type ChartLegendContentProps = ComponentProps<"div"> &
-  Pick<RechartsPrimitive.LegendProps, "payload" | "verticalAlign"> & {
-    hideIcon?: boolean
-    nameKey?: string
-  }
+type LegendPayloadItem = {
+  dataKey?: string
+  color?: string
+  value?: string
+}
+
+type ChartLegendContentProps = ComponentProps<"div"> & {
+  payload?: LegendPayloadItem[]
+  verticalAlign?: "top" | "middle" | "bottom"
+  hideIcon?: boolean
+  nameKey?: string
+}
 
 export function ChartLegendContent({
   className,

@@ -1,11 +1,16 @@
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../node_modules/.prisma/client"
+}
+
+// User roles for authorization
+enum Role {
+  ADMIN
+  USER
 }
 
 model User {
@@ -21,9 +26,34 @@ model User {
   avatar               String?
   profileBackground    String?
   status               String          @default("ONLINE")
+  role                 Role            @default(USER)
+  // Onboarding & profile fields
+  onboardingCompleted  Boolean         @default(false)
+  phone                String?
+  addressLine1         String?
+  addressLine2         String?
+  city                 String?
+  state                String?
+  postalCode           String?
+  country              String?
+  company              String?
+  timeZone             String?
   preferences          UserPreference?
   accounts             Account[]
   sessions             Session[]
+
+  // User-specific data
+  todos         Todo[]
+  analytics     AnalyticsData[]
+  crmData       CRMData[]
+  ecommerceData EcommerceData[]
+  projects      Project[]
+  tasks         Task[]
+  contacts      Contact[]
+  orders        Order[]
+  products      Product[]
+  payments      Payment[]
+  notifications Notification[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -81,4 +111,203 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+// Todo Management
+model Todo {
+  id          String    @id @default(uuid())
+  title       String
+  description String?
+  completed   Boolean   @default(false)
+  priority    String    @default("Medium") // Low, Medium, High
+  dueDate     DateTime?
+  category    String?
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, completed, priority])
+}
+
+// Analytics Data
+model AnalyticsData {
+  id              String   @id @default(uuid())
+  userId          String
+  date            DateTime
+  uniqueVisitors  Int?
+  sessionDuration Int?
+  bounceRate      Float?
+  conversionRate  Float?
+  pageViews       Int?
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, date])
+}
+
+// CRM Data
+model CRMData {
+  id            String   @id @default(uuid())
+  userId        String
+  date          DateTime
+  totalSales    Float?
+  totalProfit   Float?
+  revenueGrowth Float?
+  newCustomers  Int?
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, date])
+}
+
+// Ecommerce Data
+model EcommerceData {
+  id                String   @id @default(uuid())
+  userId            String
+  date              DateTime
+  totalSales        Float?
+  revenueSummary    Float?
+  numberOfOrders    Int?
+  averageOrderValue Float?
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, date])
+}
+
+// Project Management
+model Project {
+  id          String    @id @default(uuid())
+  name        String
+  description String?
+  status      String    @default("Active") // Active, Completed, On Hold, Cancelled
+  progress    Int       @default(0)
+  startDate   DateTime?
+  dueDate     DateTime?
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tasks       Task[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, status])
+}
+
+model Task {
+  id          String    @id @default(uuid())
+  title       String
+  description String?
+  status      String    @default("Pending") // Pending, In Progress, Completed
+  priority    String    @default("Medium") // Low, Medium, High
+  dueDate     DateTime?
+  projectId   String?
+  project     Project?  @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, status, priority])
+}
+
+// Contact Management
+model Contact {
+  id       String  @id @default(uuid())
+  name     String
+  email    String?
+  phone    String?
+  company  String?
+  position String?
+  status   String  @default("Active") // Active, Inactive, Lead
+  notes    String?
+  userId   String
+  user     User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, status])
+}
+
+// Order Management
+model Order {
+  id           String   @id @default(uuid())
+  orderNumber  String
+  customerName String
+  totalAmount  Float
+  status       String   @default("Pending") // Pending, Processing, Shipped, Delivered, Cancelled
+  orderDate    DateTime @default(now())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, status, orderDate])
+}
+
+// Product Management
+model Product {
+  id          String  @id @default(uuid())
+  name        String
+  description String?
+  price       Float
+  category    String?
+  stock       Int     @default(0)
+  status      String  @default("Active") // Active, Inactive, Out of Stock
+  userId      String
+  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, status, category])
+}
+
+// Payment Management
+model Payment {
+  id            String  @id @default(uuid())
+  userId        String
+  amount        Float
+  currency      String  @default("PKR")
+  paymentMethod String // credit_card, mobile_wallet, binance_pay, bank_transfer
+  status        String  @default("pending") // pending, processing, completed, failed, refunded
+  description   String?
+  transactionId String? @unique
+  failureReason String?
+  metadata      String? // JSON string for additional payment details
+  user          User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, status, createdAt])
+  @@index([transactionId])
+}
+
+// Notifications
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String
+  type      String   // info, warning, success, error, message
+  title     String
+  message   String
+  isRead    Boolean  @default(false)
+  url       String?
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, isRead, createdAt])
 }

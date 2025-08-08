@@ -9,12 +9,12 @@ export function BasicAvatar() {
       </CardHeader>
       <CardContent className="flex justify-center items-center gap-2">
         <Avatar>
-          <AvatarImage src="/images/avatars/male-01.svg" alt="John Doe" />
-          <AvatarFallback>JD</AvatarFallback>
+          <AvatarImage src="/images/avatars/default-avatar.svg" alt="User" />
+          <AvatarFallback>U</AvatarFallback>
         </Avatar>
         <Avatar>
-          <AvatarImage src="#" alt="John Doe" />
-          <AvatarFallback>JD</AvatarFallback>
+          <AvatarImage src="#" alt="User" />
+          <AvatarFallback>U</AvatarFallback>
         </Avatar>
       </CardContent>
     </Card>

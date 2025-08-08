@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form"
 
 import type { ForgotPasswordFormType, LocaleType } from "@/types"
 
-import { ForgotPasswordSchema } from "@/schemas/forgot-passward-schema"
+import { ForgotPasswordSchema } from "@/schemas/forgot-password-schema"
 
 import { ensureLocalizedPathname } from "@/lib/i18n"
 import { ensureRedirectPathname } from "@/lib/utils"

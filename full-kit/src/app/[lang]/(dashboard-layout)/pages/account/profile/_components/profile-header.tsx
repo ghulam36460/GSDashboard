@@ -4,7 +4,7 @@ import { UserPen } from "lucide-react"
 
 import type { LocaleType } from "@/types"
 
-import { userData } from "@/data/user"
+import { defaultUserData, getUserData } from "@/data/user"
 
 import { ensureLocalizedPathname } from "@/lib/i18n"
 import { cn, formatNumberToCompact, getInitials } from "@/lib/utils"
@@ -13,7 +13,9 @@ import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { buttonVariants } from "@/components/ui/button"
 
-export function ProfileHeader({ locale }: { locale: LocaleType }) {
+export async function ProfileHeader({ locale }: { locale: LocaleType }) {
+  const userData = (await getUserData()) || defaultUserData
+
   return (
     <section className="bg-background border-y border-border">
       <AspectRatio ratio={5 / 1} className="bg-muted">

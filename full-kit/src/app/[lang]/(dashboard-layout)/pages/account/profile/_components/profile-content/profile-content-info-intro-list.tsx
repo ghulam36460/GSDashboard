@@ -1,9 +1,9 @@
-import { userData } from "@/data/user"
+import { defaultUserData } from "@/data/user"
 
 import { ProfileContentIntroItem } from "./profile-content-info-intro-item"
 
 export function ProfileContentIntroList() {
-  const userInfo = userData
+  const userInfo = defaultUserData
   const location = userInfo.state
     ? userInfo.state + ", " + userInfo.country
     : userInfo.country

@@ -1,1 +1,1266 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[96],{1594:(e,t,a)=>{"use strict";a.d(t,{Layout:()=>eU});var n=a(8081),s=a(6595),r=a(2194),l=a(9301);function i(){let e=new Date().getFullYear();return(0,n.jsx)("footer",{className:"bg-background border-t border-sidebar-border",children:(0,n.jsxs)("div",{className:"container flex justify-between items-center p-4 md:px-6",children:[(0,n.jsxs)("p",{className:"text-xs text-muted-foreground md:text-sm",children:["Copyright \xa9 ",e," ",(0,n.jsx)("a",{href:"/",target:"_blank",rel:"noopener noreferrer",className:(0,r.cn)((0,l.ru)({variant:"link"}),"inline p-0"),children:"Dashboard"}),"."]}),(0,n.jsxs)("p",{className:"text-xs text-muted-foreground md:text-sm",children:["Designed & Developed By"," ",(0,n.jsx)("a",{href:"https://github.com/ghulam36460",target:"_blank",rel:"noopener noreferrer",className:(0,r.cn)((0,l.ru)({variant:"link"}),"inline p-0"),children:"Ghulam & Shehwar"}),"."]})]})})}var d=a(5186),o=a(7950),c=a.n(o),u=a(9651),m=a(5501);let x=[{title:"Main",items:[{title:"Home",href:"/",iconName:"House"}]}];var f=a(3343),h=a(3484);let p=(0,h.F)("inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",{variants:{variant:{default:"border-transparent bg-primary text-primary-foreground",secondary:"border-transparent bg-secondary text-secondary-foreground",destructive:"border-transparent bg-destructive text-destructive-foreground",outline:"text-foreground"}},defaultVariants:{variant:"default"}});function g(e){let{className:t,variant:a,asChild:s=!1,...l}=e,i=s?f.DX:"span";return(0,n.jsx)(i,{"data-slot":"badge",className:(0,r.cn)(p({variant:a}),t),...l})}var j=a(8721);function b(e){let{...t}=e;return(0,n.jsx)(j.bL,{"data-slot":"collapsible",...t})}function v(e){let{className:t,...a}=e;return(0,n.jsx)(j.R6,{"data-slot":"collapsible-trigger",className:(0,r.cn)("cursor-pointer",t),...a})}function N(e){let{...t}=e;return(0,n.jsx)(j.Ke,{"data-slot":"collapsible-content",...t})}var w=a(377);function k(e){let{orientation:t,className:a,children:s,...l}=e;return(0,n.jsxs)(w.bL,{"data-slot":"scroll-area",className:(0,r.cn)("relative overflow-hidden",a),...l,children:[(0,n.jsx)(w.LM,{"data-slot":"scroll-area-viewport",className:"h-full w-full rounded-[inherit]",children:s}),(0,n.jsx)(y,{orientation:t}),(0,n.jsx)(w.OK,{})]})}function y(e){let{className:t,orientation:a="vertical",...s}=e;return(0,n.jsx)(w.VM,{"data-slot":"scroll-area-scrollbar",orientation:a,className:(0,r.cn)("flex touch-none select-none transition-colors","vertical"===a&&"h-full w-2.5 border-l border-l-transparent p-[1px]","horizontal"===a&&"h-2.5 flex-col border-t border-t-transparent p-[1px]",t),...s,children:(0,n.jsx)(w.lr,{className:"relative flex-1 rounded-full bg-border"})})}var _=a(9959),z=a(3906);function C(e){let{name:t,...a}=e,s=z[t];return s?(0,n.jsx)(s,{...a}):null}var E=a(2149),F=a(9479),L=a(3097),A=a(8964),M=a(4457);function S(e){let{...t}=e;return(0,n.jsx)(A.bL,{"data-slot":"dialog",...t})}function D(e){let{...t}=e;return(0,n.jsx)(A.ZL,{"data-slot":"dialog-portal",...t})}function q(e){let{className:t,...a}=e;return(0,n.jsx)(A.hJ,{"data-slot":"dialog-overlay",className:(0,r.cn)("fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",t),...a})}function B(e){let{className:t,children:a,...s}=e;return(0,n.jsxs)(D,{"data-slot":"dialog-portal",children:[(0,n.jsx)(q,{}),(0,n.jsxs)(A.UC,{"data-slot":"dialog-content",className:(0,r.cn)("fixed top-[50%] left-[50%] z-50 w-full max-w-[calc(100%-2rem)] grid translate-x-[-50%] translate-y-[-50%] gap-4 rounded-lg border p-6 shadow-lg bg-background duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 sm:max-w-lg",t),...s,children:[a,(0,n.jsx)(A.bm,{className:"cursor-pointer absolute end-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground","aria-label":"Close",children:(0,n.jsx)(M.A,{className:"h-4 w-4"})})]})]})}function O(e){let{className:t,...a}=e;return(0,n.jsx)(A.hE,{"data-slot":"dialog-title",className:(0,r.cn)("text-lg font-semibold leading-none tracking-tight",t),...a})}function T(e){let{className:t,...a}=e;return(0,n.jsx)(L.uB,{"data-slot":"command",className:(0,r.cn)("flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground",t),...a})}function H(e){let{children:t,...a}=e;return(0,n.jsx)(S,{...a,children:(0,n.jsx)(B,{className:"overflow-hidden p-0 rounded-md","aria-describedby":void 0,children:(0,n.jsx)(T,{className:"[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5",children:t})})})}function P(e){let{className:t,...a}=e;return(0,n.jsxs)("div",{"data-slot":"command-input-wrapper",className:"flex items-center border-b px-3",children:[(0,n.jsx)(F.A,{className:"me-2 size-4 shrink-0 opacity-50"}),(0,n.jsx)(L.uB.Input,{"data-slot":"command-input",className:(0,r.cn)("flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-hidden placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",t),...a})]})}function U(e){let{className:t,...a}=e;return(0,n.jsx)(L.uB.List,{"data-slot":"command-list",className:(0,r.cn)("max-h-[300px] overflow-y-auto overflow-x-hidden",t),...a})}function R(e){let{...t}=e;return(0,n.jsx)(L.uB.Empty,{"data-slot":"command-empty",className:"py-6 text-center text-sm",...t})}function I(e){let{className:t,...a}=e;return(0,n.jsx)(L.uB.Group,{"data-slot":"command-group",className:(0,r.cn)("overflow-hidden p-1 text-foreground [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-sm [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground",t),...a})}function J(e){let{className:t,...a}=e;return(0,n.jsx)(L.uB.Item,{"data-slot":"command-item",className:(0,r.cn)("cursor-pointer relative flex gap-2 select-none items-center rounded-sm px-2 py-1.5 text-sm outline-hidden data-[disabled=true]:pointer-events-none data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled=true]:opacity-50",t),...a})}function K(e){let{className:t,children:a,...s}=e;return(0,n.jsx)("kbd",{"data-slot":"keyboard",className:(0,r.cn)("pointer-events-none select-none h-5 inline-flex items-center gap-x-1 px-1.5 bg-muted text-sm text-muted-foreground font-mono border rounded-sm","before:content-['⌘']",t),...s,children:a})}function V(e){let{buttonClassName:t,...a}=e,[s,i]=(0,E.useState)(!1),d=(0,u.usePathname)(),o=(0,u.useRouter)();(0,E.useEffect)(()=>{let e=e=>{("k"===e.key&&(e.metaKey||e.ctrlKey)||"/"===e.key)&&!(e.target instanceof HTMLElement&&e.target.isContentEditable||e.target instanceof HTMLInputElement||e.target instanceof HTMLTextAreaElement||e.target instanceof HTMLSelectElement)&&(e.preventDefault(),i(e=>!e))};return document.addEventListener("keydown",e),()=>document.removeEventListener("keydown",e)},[]);let c=(0,E.useCallback)(e=>{i(!1),e()},[]),f=e=>{if(e.items)return(0,n.jsxs)(b,{className:"group/collapsible",children:[(0,n.jsx)(J,{asChild:!0,children:(0,n.jsxs)(v,{className:"w-full flex justify-between items-center gap-2 px-2 py-1.5 [&[data-state=open]>svg]:rotate-180",children:[(0,n.jsxs)("span",{className:"flex items-center gap-2",children:["iconName"in e&&(0,n.jsx)(C,{name:e.iconName,className:"h-4 w-4"}),(0,n.jsx)("span",{children:e.title}),"label"in e&&(0,n.jsx)(g,{variant:"secondary",children:e.label})]}),(0,n.jsx)(m.A,{className:"h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200"})]})}),(0,n.jsx)(N,{className:"space-y-1 overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down",children:e.items.map(e=>f(e))})]},e.title);if("href"in e){let t=(0,r.n2)(e.href,d);return(0,n.jsxs)(J,{onSelect:()=>c(()=>o.push(e.href)),className:(0,r.cn)("flex items-center gap-2 px-2 py-1.5",t&&"bg-accent"),children:["iconName"in e?(0,n.jsx)(C,{name:e.iconName}):(0,n.jsx)(C,{name:"Circle"}),(0,n.jsx)("span",{children:e.title}),e.label&&(0,n.jsx)(g,{variant:"secondary",children:e.label})]},e.title)}};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(l.$n,{variant:"outline",size:"lg",className:(0,r.cn)("max-w-64 w-full justify-start px-3 rounded-md bg-muted/50 text-muted-foreground",t),onClick:()=>i(!0),...a,children:[(0,n.jsx)(F.A,{className:"me-2 h-4 w-4"}),(0,n.jsx)("span",{children:"Search..."}),(0,n.jsx)(K,{className:"ms-auto",children:"K"})]}),(0,n.jsxs)(H,{open:s,onOpenChange:i,...a,children:[(0,n.jsx)(O,{className:"sr-only",children:"Search Menu"}),(0,n.jsx)(P,{placeholder:"Type a command or search..."}),(0,n.jsxs)(U,{children:[(0,n.jsx)(R,{children:"No results found."}),(0,n.jsx)(k,{className:"h-[300px] max-h-[300px]",children:x.map(e=>(0,n.jsx)(I,{heading:e.title,className:"[&_[cmdk-group-items]]:space-y-1",children:e.items.map(e=>(0,n.jsx)(E.Fragment,{children:f(e)},e.title))},e.title))})]})]})]})}function Z(){let e=(0,u.usePathname)(),{openMobile:t,setOpenMobile:a,isMobile:l}=(0,_.cL)(),{settings:i}=(0,s.t)();if("horizontal"===i.layout&&!l)return null;let o=s=>{if(s.items)return(0,n.jsxs)(b,{className:"group/collapsible",children:[(0,n.jsx)(v,{asChild:!0,children:(0,n.jsxs)(_.Uj,{className:"w-full justify-between [&[data-state=open]>svg]:rotate-180",children:[(0,n.jsxs)("span",{className:"flex items-center",children:["iconName"in s&&(0,n.jsx)(C,{name:s.iconName,className:"me-2 h-4 w-4"}),(0,n.jsx)("span",{children:s.title}),"label"in s&&(0,n.jsx)(g,{variant:"secondary",className:"me-2",children:s.label})]}),(0,n.jsx)(m.A,{className:"h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200"})]})}),(0,n.jsx)(N,{className:"overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down",children:(0,n.jsx)(_.q9,{children:s.items.map(e=>(0,n.jsx)(_.FX,{children:o(e)},e.title))})})]});if("href"in s){let l=(0,r.n2)(s.href,e);return(0,n.jsx)(_.Uj,{isActive:l,onClick:()=>a(!t),asChild:!0,children:(0,n.jsxs)(c(),{href:s.href,children:["iconName"in s&&(0,n.jsx)(C,{name:s.iconName,className:"h-4 w-4"}),(0,n.jsx)("span",{children:s.title}),"label"in s&&(0,n.jsx)(g,{variant:"secondary",children:s.label})]})})}};return(0,n.jsxs)(_.Bx,{side:"left",children:[(0,n.jsxs)(_.Gh,{children:[(0,n.jsxs)(c(),{href:"/",className:"w-fit flex text-foreground font-black p-2 pb-0 mb-2",onClick:()=>l&&a(!t),children:[(0,n.jsx)(d.default,{src:"/images/icons/shadboard.svg",alt:"",height:24,width:24,className:"dark:invert"}),(0,n.jsx)("span",{children:"Dashboard"})]}),(0,n.jsx)(V,{buttonClassName:"max-w-full"})]}),(0,n.jsx)(k,{children:(0,n.jsx)(_.Yv,{className:"gap-0",children:x.map(e=>(0,n.jsxs)(_.Cn,{children:[(0,n.jsx)(_.jj,{children:e.title}),(0,n.jsx)(_.rQ,{children:(0,n.jsx)(_.wZ,{children:e.items.map(e=>(0,n.jsx)(_.FX,{children:o(e)},e.title))})})]},e.title))})})]})}var $=a(1394);function G(){let[e,t]=(0,E.useState)(!1),a=()=>{t(!!document.fullscreenElement||!!document.webkitFullscreenElement||!!document.msFullscreenElement)};return(0,E.useEffect)(()=>(document.addEventListener("fullscreenchange",a),document.addEventListener("webkitfullscreenchange",a),document.addEventListener("msfullscreenchange",a),()=>{document.removeEventListener("fullscreenchange",a),document.removeEventListener("webkitfullscreenchange",a),document.removeEventListener("msfullscreenchange",a)}),[]),(0,n.jsx)(l.$n,{variant:"ghost",size:"icon",onClick:()=>{let t=document.documentElement;e?document.exitFullscreen?document.exitFullscreen():document.webkitExitFullscreen?document.webkitExitFullscreen():document.msExitFullscreen&&document.msExitFullscreen():t.requestFullscreen?t.requestFullscreen():t.webkitRequestFullscreen?t.webkitRequestFullscreen():t.msRequestFullscreen?t.msRequestFullscreen():alert("Fullscreen mode is not supported in this browser.")},"aria-label":"Toggle Fullscreen",className:"hidden md:inline-flex",children:(0,n.jsx)(C,{name:e?"Shrink":"Expand",className:"size-4"})})}var X=a(3391),Y=a(5205),Q=a(1688),W=a(1775),ee=a(1946);function et(e){let{...t}=e;return(0,n.jsx)(W.bL,{"data-slot":"dropdown-menu",...t})}function ea(e){let{className:t,...a}=e;return(0,n.jsx)(W.l9,{"data-slot":"dropdown-menu-trigger",className:(0,r.cn)("cursor-pointer",t),...a})}function en(e){let{...t}=e;return(0,n.jsx)(W.YJ,{"data-slot":"dropdown-menu-group",...t})}function es(e){let{...t}=e;return(0,n.jsx)(W.z6,{"data-slot":"dropdown-menu-radio-group",...t})}function er(e){let{className:t,sideOffset:a=4,...s}=e;return(0,n.jsx)(W.ZL,{children:(0,n.jsx)(W.UC,{"data-slot":"dropdown-menu-content",sideOffset:a,className:(0,r.cn)("z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md","data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",t),...s})})}function el(e){let{className:t,inset:a,variant:s="default",...l}=e;return(0,n.jsx)(W.q7,{"data-slot":"dropdown-menu-item","data-inset":a,"data-variant":s,className:(0,r.cn)("relative flex cursor-pointer items-center rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:ps-8 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 focus:bg-accent focus:text-accent-foreground data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/20 data-[variant=destructive]:focus:text-destructive data-[variant=destructive]:*:[svg]:!text-destructive [&_svg:not([class*='text-'])]:text-muted-foreground",t),...l})}function ei(e){let{className:t,children:a,...s}=e;return(0,n.jsxs)(W.hN,{"data-slot":"dropdown-menu-radio-item",className:(0,r.cn)("relative flex cursor-pointer select-none items-center rounded-sm py-1.5 ps-8 pe-2 text-sm outline-hidden transition-colors focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50",t),...s,children:[(0,n.jsx)("span",{className:"absolute start-2 flex h-3.5 w-3.5 items-center justify-center",children:(0,n.jsx)(W.VF,{children:(0,n.jsx)(ee.A,{className:"h-8 w-8 fill-current"})})}),a]})}function ed(e){let{className:t,inset:a,...s}=e;return(0,n.jsx)(W.JU,{"data-slot":"dropdown-menu-label","data-inset":a,className:(0,r.cn)("px-2 py-1.5 text-sm font-medium data-[inset]:ps-8",t),...s})}function eo(e){let{className:t,...a}=e;return(0,n.jsx)(W.wv,{"data-slot":"dropdown-menu-separator",className:(0,r.cn)("-mx-1 my-1 h-px bg-muted",t),...a})}let ec={light:X.A,dark:Y.A,system:Q.A};function eu(){let{settings:e,updateSettings:t}=(0,s.t)(),a=e.mode,r=ec[a],i=(0,E.useCallback)(a=>{t({...e,mode:a})},[e,t]);return(0,n.jsxs)(et,{children:[(0,n.jsx)(ea,{asChild:!0,children:(0,n.jsx)(l.$n,{variant:"ghost",size:"icon","aria-label":"Mode",children:(0,n.jsx)(r,{className:"size-4"})})}),(0,n.jsxs)(er,{children:[(0,n.jsx)(ed,{children:"Mode"}),(0,n.jsx)(eo,{}),(0,n.jsxs)(es,{value:a,children:[(0,n.jsx)(ei,{value:"light",onClick:()=>i("light"),children:"Light"}),(0,n.jsx)(ei,{value:"dark",onClick:()=>i("dark"),children:"Dark"}),(0,n.jsx)(ei,{value:"system",onClick:()=>i("system"),children:"System"})]})]})]})}var em=a(5984),ex=a(6762),ef=a(2738);let eh={name:"John Doe",avatar:"/images/avatars/male-01.svg",email:"john.doe@example.com"};var ep=a(7261);function eg(e){let{className:t,...a}=e;return(0,n.jsx)(ep.bL,{"data-slot":"avatar",className:(0,r.cn)("relative flex h-10 w-10 shrink-0",t),...a})}function ej(e){let{className:t,...a}=e;return(0,n.jsx)(ep._V,{"data-slot":"avatar-image",className:(0,r.cn)("aspect-square h-full w-full bg-muted rounded-lg object-cover",t),...a})}function eb(e){let{className:t,...a}=e;return(0,n.jsx)(ep.H4,{className:(0,r.cn)("flex h-full w-full items-center justify-center bg-muted rounded-lg",t),...a})}function ev(){return(0,n.jsxs)(et,{children:[(0,n.jsx)(ea,{asChild:!0,children:(0,n.jsx)(l.$n,{variant:"outline",size:"icon",className:"rounded-lg","aria-label":"User",children:(0,n.jsxs)(eg,{className:"size-9",children:[(0,n.jsx)(ej,{src:null==eh?void 0:eh.avatar,alt:""}),(0,n.jsx)(eb,{className:"bg-transparent",children:(null==eh?void 0:eh.name)&&(0,r.IM)(eh.name)})]})})}),(0,n.jsxs)(er,{forceMount:!0,children:[(0,n.jsxs)(ed,{className:"flex gap-2",children:[(0,n.jsxs)(eg,{children:[(0,n.jsx)(ej,{src:null==eh?void 0:eh.avatar,alt:"Avatar"}),(0,n.jsx)(eb,{className:"bg-transparent",children:(null==eh?void 0:eh.name)&&(0,r.IM)(eh.name)})]}),(0,n.jsxs)("div",{className:"flex flex-col overflow-hidden",children:[(0,n.jsx)("p",{className:"text-sm font-medium truncate",children:"John Doe"}),(0,n.jsx)("p",{className:"text-xs text-muted-foreground font-semibold truncate",children:null==eh?void 0:eh.email})]})]}),(0,n.jsx)(eo,{}),(0,n.jsxs)(en,{className:"max-w-48",children:[(0,n.jsx)(el,{asChild:!0,children:(0,n.jsxs)(c(),{href:"/",children:[(0,n.jsx)(em.A,{className:"me-2 size-4"}),"Profile"]})}),(0,n.jsx)(el,{asChild:!0,children:(0,n.jsxs)(c(),{href:"/",children:[(0,n.jsx)(ex.A,{className:"me-2 size-4"}),"Settings"]})})]}),(0,n.jsx)(eo,{}),(0,n.jsxs)(el,{children:[(0,n.jsx)(ef.A,{className:"me-2 size-4"}),"Sign Out"]})]})]})}a(6606),(0,h.F)("transition duration-300 hover:scale-105 hover:z-10",{variants:{size:{default:"h-10 w-10",sm:"h-9 w-9 text-sm",lg:"h-11 w-11"}},defaultVariants:{size:"default"}});var eN=a(5039);function ew(){let{isMobile:e,openMobile:t,setOpenMobile:a}=(0,_.cL)();if(e)return(0,n.jsx)(l.$n,{"data-sidebar":"trigger",variant:"ghost",size:"icon",onClick:()=>a(!t),"aria-label":"Toggle Sidebar",children:(0,n.jsx)(eN.A,{className:"h-4 w-4"})})}function ek(){return(0,n.jsxs)("div",{className:"container flex h-14 justify-between items-center gap-4",children:[(0,n.jsx)(ew,{}),(0,n.jsxs)(c(),{href:"/",className:"hidden text-foreground font-black lg:flex",children:[(0,n.jsx)(d.default,{src:"/images/icons/shadboard.svg",alt:"",height:24,width:24,className:"dark:invert"}),(0,n.jsx)("span",{children:"Dashboard"})]}),(0,n.jsxs)("div",{className:"flex gap-2",children:[(0,n.jsx)(G,{}),(0,n.jsx)(eu,{}),(0,n.jsx)(ev,{})]})]})}var ey=a(732),e_=a(9557);function ez(e){let{...t}=e;return(0,n.jsx)(ey.W1,{"data-slot":"menubar-menu",...t})}function eC(e){let{...t}=e;return(0,n.jsx)(ey.ZL,{"data-slot":"menubar-portal",...t})}function eE(e){let{className:t,...a}=e;return(0,n.jsx)(ey.bL,{"data-slot":"menubar",className:(0,r.cn)("flex h-9 items-center gap-x-1 rounded-md border bg-background p-1",t),...a})}function eF(e){let{className:t,...a}=e;return(0,n.jsx)(ey.l9,{"data-slot":"menubar-trigger",className:(0,r.cn)("flex cursor-pointer select-none items-center rounded-sm px-3 py-1 text-sm font-medium outline-hidden focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground",t),...a})}function eL(e){let{className:t,inset:a,children:s,...l}=e;return(0,n.jsxs)(ey.ZP,{"data-slot":"menubar-sub-trigger","data-inset":a,className:(0,r.cn)("focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground cursor-pointer flex items-center rounded-sm px-2 py-1.5 text-sm outline-none select-none data-[inset]:ps-8",t),...l,children:[s,(0,n.jsx)(e_.A,{className:"ms-auto h-4 w-4 rtl:-scale-x-100"})]})}function eA(e){let{...t}=e;return(0,n.jsx)(ey.Pb,{"data-slot":"menubar-sub",...t})}function eM(e){let{className:t,...a}=e;return(0,n.jsx)(ey.G5,{"data-slot":"menubar-sub-content",className:(0,r.cn)("z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",t),...a})}function eS(e){let{className:t,align:a="start",alignOffset:s=-4,sideOffset:l=8,...i}=e;return(0,n.jsx)(eC,{children:(0,n.jsx)(ey.UC,{"data-slot":"menubar-content",align:a,alignOffset:s,sideOffset:l,className:(0,r.cn)("z-50 min-w-[12rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",t),...i})})}function eD(e){let{className:t,inset:a,variant:s="default",...l}=e;return(0,n.jsx)(ey.q7,{"data-slot":"menubar-item","data-inset":a,"data-variant":s,className:(0,r.cn)("relative flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 focus:bg-accent focus:text-accent-foreground data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/20 data-[variant=destructive]:focus:text-destructive data-[variant=destructive]:*:[svg]:!text-destructive [&_svg:not([class*='text-'])]:text-muted-foreground",t),...l})}function eq(){let e=(0,u.usePathname)(),t=a=>{if(a.items)return(0,n.jsxs)(eA,{children:[(0,n.jsxs)(eL,{className:"gap-2",children:["iconName"in a&&(0,n.jsx)(C,{name:a.iconName,className:"me-2 h-4 w-4"}),(0,n.jsx)("span",{children:a.title}),"label"in a&&(0,n.jsx)(g,{variant:"secondary",children:a.label})]}),(0,n.jsx)(eM,{className:"max-h-[90vh] flex flex-col flex-wrap gap-1",children:a.items.map(e=>(0,n.jsx)(eD,{className:"p-0",children:t(e)},e.title))})]});if("href"in a){let t=(0,r.n2)(a.href,e);return(0,n.jsx)(eD,{asChild:!0,children:(0,n.jsxs)(c(),{href:a.href,className:(0,r.cn)("w-full gap-2",t&&"bg-accent"),children:["iconName"in a?(0,n.jsx)(C,{name:a.iconName,className:"h-4 w-4"}):(0,n.jsx)(C,{name:"Circle",className:"h-2 w-2"}),(0,n.jsx)("span",{children:a.title}),"label"in a&&(0,n.jsx)(g,{variant:"secondary",children:a.label})]})})}};return(0,n.jsx)(eE,{className:"border-0",children:x.map(e=>(0,n.jsxs)(ez,{children:[(0,n.jsx)(eF,{children:e.title}),(0,n.jsx)(eS,{className:"space-y-1",children:e.items.map(e=>(0,n.jsx)(E.Fragment,{children:t(e)},e.title))})]},e.title))})}function eB(){return(0,n.jsxs)("div",{className:"container hidden justify-between items-center py-1 lg:flex",children:[(0,n.jsx)(eq,{}),(0,n.jsx)(V,{buttonClassName:"h-8"})]})}function eO(){return(0,n.jsxs)("header",{className:"sticky top-0 z-50 w-full bg-background border-b border-sidebar-border",children:[(0,n.jsx)(eB,{}),(0,n.jsx)($.w,{className:"hidden bg-sidebar-border h-[0.5px] md:block"}),(0,n.jsx)(ek,{})]})}function eT(e){let{children:t}=e;return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(Z,{}),(0,n.jsxs)("div",{className:"w-full",children:[(0,n.jsx)(eO,{}),(0,n.jsx)("main",{className:"min-h-[calc(100svh-9.85rem)] bg-muted/40",children:t}),(0,n.jsx)(i,{})]})]})}function eH(){return(0,n.jsx)("header",{className:"sticky top-0 z-50 w-full bg-background border-b border-sidebar-border",children:(0,n.jsxs)("div",{className:"container flex h-14 justify-between items-center gap-4",children:[(0,n.jsx)(ew,{}),(0,n.jsxs)("div",{className:"grow flex justify-end gap-2",children:[(0,n.jsx)(_.x2,{className:"hidden lg:flex lg:me-auto"}),(0,n.jsx)(G,{}),(0,n.jsx)(eu,{}),(0,n.jsx)(ev,{})]})]})})}function eP(e){let{children:t}=e;return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(Z,{}),(0,n.jsxs)("div",{className:"w-full",children:[(0,n.jsx)(eH,{}),(0,n.jsx)("main",{className:"min-h-[calc(100svh-6.82rem)] bg-muted/40",children:t}),(0,n.jsx)(i,{})]})]})}function eU(e){let{children:t}=e;return!function(){let{settings:e}=(0,s.t)();return"vertical"===e.layout}()?(0,n.jsx)(eT,{children:t}):(0,n.jsx)(eP,{children:t})}},3711:(e,t,a)=>{Promise.resolve().then(a.bind(a,1594))}},e=>{var t=t=>e(e.s=t);e.O(0,[369,311,206,518,773,497,954,358],()=>t(3711)),_N_E=e.O()}]);
+;(self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
+  [96],
+  {
+    1594: (e, t, a) => {
+      "use strict"
+      a.d(t, { Layout: () => eU })
+      var n = a(8081),
+        s = a(6595),
+        r = a(2194),
+        l = a(9301)
+      function i() {
+        let e = new Date().getFullYear()
+        return (0, n.jsx)("footer", {
+          className: "bg-background border-t border-sidebar-border",
+          children: (0, n.jsxs)("div", {
+            className:
+              "container flex justify-between items-center p-4 md:px-6",
+            children: [
+              (0, n.jsxs)("p", {
+                className: "text-xs text-muted-foreground md:text-sm",
+                children: [
+                  "Copyright \xa9 ",
+                  e,
+                  " ",
+                  (0, n.jsx)("a", {
+                    href: "/",
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    className: (0, r.cn)(
+                      (0, l.ru)({ variant: "link" }),
+                      "inline p-0"
+                    ),
+                    children: "Dashboard",
+                  }),
+                  ".",
+                ],
+              }),
+              (0, n.jsxs)("p", {
+                className: "text-xs text-muted-foreground md:text-sm",
+                children: [
+                  "Designed & Developed By",
+                  " ",
+                  (0, n.jsx)("a", {
+                    href: "https://github.com/ghulam36460",
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    className: (0, r.cn)(
+                      (0, l.ru)({ variant: "link" }),
+                      "inline p-0"
+                    ),
+                    children: "Ghulam & Shehwar",
+                  }),
+                  ".",
+                ],
+              }),
+            ],
+          }),
+        })
+      }
+      var d = a(5186),
+        o = a(7950),
+        c = a.n(o),
+        u = a(9651),
+        m = a(5501)
+      let x = [
+        {
+          title: "Main",
+          items: [{ title: "Home", href: "/", iconName: "House" }],
+        },
+      ]
+      var f = a(3343),
+        h = a(3484)
+      let p = (0, h.F)(
+        "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+        {
+          variants: {
+            variant: {
+              default: "border-transparent bg-primary text-primary-foreground",
+              secondary:
+                "border-transparent bg-secondary text-secondary-foreground",
+              destructive:
+                "border-transparent bg-destructive text-destructive-foreground",
+              outline: "text-foreground",
+            },
+          },
+          defaultVariants: { variant: "default" },
+        }
+      )
+      function g(e) {
+        let { className: t, variant: a, asChild: s = !1, ...l } = e,
+          i = s ? f.DX : "span"
+        return (0, n.jsx)(i, {
+          "data-slot": "badge",
+          className: (0, r.cn)(p({ variant: a }), t),
+          ...l,
+        })
+      }
+      var j = a(8721)
+      function b(e) {
+        let { ...t } = e
+        return (0, n.jsx)(j.bL, { "data-slot": "collapsible", ...t })
+      }
+      function v(e) {
+        let { className: t, ...a } = e
+        return (0, n.jsx)(j.R6, {
+          "data-slot": "collapsible-trigger",
+          className: (0, r.cn)("cursor-pointer", t),
+          ...a,
+        })
+      }
+      function N(e) {
+        let { ...t } = e
+        return (0, n.jsx)(j.Ke, { "data-slot": "collapsible-content", ...t })
+      }
+      var w = a(377)
+      function k(e) {
+        let { orientation: t, className: a, children: s, ...l } = e
+        return (0, n.jsxs)(w.bL, {
+          "data-slot": "scroll-area",
+          className: (0, r.cn)("relative overflow-hidden", a),
+          ...l,
+          children: [
+            (0, n.jsx)(w.LM, {
+              "data-slot": "scroll-area-viewport",
+              className: "h-full w-full rounded-[inherit]",
+              children: s,
+            }),
+            (0, n.jsx)(y, { orientation: t }),
+            (0, n.jsx)(w.OK, {}),
+          ],
+        })
+      }
+      function y(e) {
+        let { className: t, orientation: a = "vertical", ...s } = e
+        return (0, n.jsx)(w.VM, {
+          "data-slot": "scroll-area-scrollbar",
+          orientation: a,
+          className: (0, r.cn)(
+            "flex touch-none select-none transition-colors",
+            "vertical" === a &&
+              "h-full w-2.5 border-l border-l-transparent p-[1px]",
+            "horizontal" === a &&
+              "h-2.5 flex-col border-t border-t-transparent p-[1px]",
+            t
+          ),
+          ...s,
+          children: (0, n.jsx)(w.lr, {
+            className: "relative flex-1 rounded-full bg-border",
+          }),
+        })
+      }
+      var _ = a(9959),
+        z = a(3906)
+      function C(e) {
+        let { name: t, ...a } = e,
+          s = z[t]
+        return s ? (0, n.jsx)(s, { ...a }) : null
+      }
+      var E = a(2149),
+        F = a(9479),
+        L = a(3097),
+        A = a(8964),
+        M = a(4457)
+      function S(e) {
+        let { ...t } = e
+        return (0, n.jsx)(A.bL, { "data-slot": "dialog", ...t })
+      }
+      function D(e) {
+        let { ...t } = e
+        return (0, n.jsx)(A.ZL, { "data-slot": "dialog-portal", ...t })
+      }
+      function q(e) {
+        let { className: t, ...a } = e
+        return (0, n.jsx)(A.hJ, {
+          "data-slot": "dialog-overlay",
+          className: (0, r.cn)(
+            "fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+            t
+          ),
+          ...a,
+        })
+      }
+      function B(e) {
+        let { className: t, children: a, ...s } = e
+        return (0, n.jsxs)(D, {
+          "data-slot": "dialog-portal",
+          children: [
+            (0, n.jsx)(q, {}),
+            (0, n.jsxs)(A.UC, {
+              "data-slot": "dialog-content",
+              className: (0, r.cn)(
+                "fixed top-[50%] left-[50%] z-50 w-full max-w-[calc(100%-2rem)] grid translate-x-[-50%] translate-y-[-50%] gap-4 rounded-lg border p-6 shadow-lg bg-background duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 sm:max-w-lg",
+                t
+              ),
+              ...s,
+              children: [
+                a,
+                (0, n.jsx)(A.bm, {
+                  className:
+                    "cursor-pointer absolute end-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground",
+                  "aria-label": "Close",
+                  children: (0, n.jsx)(M.A, { className: "h-4 w-4" }),
+                }),
+              ],
+            }),
+          ],
+        })
+      }
+      function O(e) {
+        let { className: t, ...a } = e
+        return (0, n.jsx)(A.hE, {
+          "data-slot": "dialog-title",
+          className: (0, r.cn)(
+            "text-lg font-semibold leading-none tracking-tight",
+            t
+          ),
+          ...a,
+        })
+      }
+      function T(e) {
+        let { className: t, ...a } = e
+        return (0, n.jsx)(L.uB, {
+          "data-slot": "command",
+          className: (0, r.cn)(
+            "flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground",
+            t
+          ),
+          ...a,
+        })
+      }
+      function H(e) {
+        let { children: t, ...a } = e
+        return (0, n.jsx)(S, {
+          ...a,
+          children: (0, n.jsx)(B, {
+            className: "overflow-hidden p-0 rounded-md",
+            "aria-describedby": void 0,
+            children: (0, n.jsx)(T, {
+              className:
+                "[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5",
+              children: t,
+            }),
+          }),
+        })
+      }
+      function P(e) {
+        let { className: t, ...a } = e
+        return (0, n.jsxs)("div", {
+          "data-slot": "command-input-wrapper",
+          className: "flex items-center border-b px-3",
+          children: [
+            (0, n.jsx)(F.A, { className: "me-2 size-4 shrink-0 opacity-50" }),
+            (0, n.jsx)(L.uB.Input, {
+              "data-slot": "command-input",
+              className: (0, r.cn)(
+                "flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-hidden placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
+                t
+              ),
+              ...a,
+            }),
+          ],
+        })
+      }
+      function U(e) {
+        let { className: t, ...a } = e
+        return (0, n.jsx)(L.uB.List, {
+          "data-slot": "command-list",
+          className: (0, r.cn)(
+            "max-h-[300px] overflow-y-auto overflow-x-hidden",
+            t
+          ),
+          ...a,
+        })
+      }
+      function R(e) {
+        let { ...t } = e
+        return (0, n.jsx)(L.uB.Empty, {
+          "data-slot": "command-empty",
+          className: "py-6 text-center text-sm",
+          ...t,
+        })
+      }
+      function I(e) {
+        let { className: t, ...a } = e
+        return (0, n.jsx)(L.uB.Group, {
+          "data-slot": "command-group",
+          className: (0, r.cn)(
+            "overflow-hidden p-1 text-foreground [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-sm [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground",
+            t
+          ),
+          ...a,
+        })
+      }
+      function J(e) {
+        let { className: t, ...a } = e
+        return (0, n.jsx)(L.uB.Item, {
+          "data-slot": "command-item",
+          className: (0, r.cn)(
+            "cursor-pointer relative flex gap-2 select-none items-center rounded-sm px-2 py-1.5 text-sm outline-hidden data-[disabled=true]:pointer-events-none data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled=true]:opacity-50",
+            t
+          ),
+          ...a,
+        })
+      }
+      function K(e) {
+        let { className: t, children: a, ...s } = e
+        return (0, n.jsx)("kbd", {
+          "data-slot": "keyboard",
+          className: (0, r.cn)(
+            "pointer-events-none select-none h-5 inline-flex items-center gap-x-1 px-1.5 bg-muted text-sm text-muted-foreground font-mono border rounded-sm",
+            "before:content-['⌘']",
+            t
+          ),
+          ...s,
+          children: a,
+        })
+      }
+      function V(e) {
+        let { buttonClassName: t, ...a } = e,
+          [s, i] = (0, E.useState)(!1),
+          d = (0, u.usePathname)(),
+          o = (0, u.useRouter)()
+        ;(0, E.useEffect)(() => {
+          let e = (e) => {
+            ;(("k" === e.key && (e.metaKey || e.ctrlKey)) || "/" === e.key) &&
+              !(
+                (e.target instanceof HTMLElement &&
+                  e.target.isContentEditable) ||
+                e.target instanceof HTMLInputElement ||
+                e.target instanceof HTMLTextAreaElement ||
+                e.target instanceof HTMLSelectElement
+              ) &&
+              (e.preventDefault(), i((e) => !e))
+          }
+          return (
+            document.addEventListener("keydown", e),
+            () => document.removeEventListener("keydown", e)
+          )
+        }, [])
+        let c = (0, E.useCallback)((e) => {
+            ;(i(!1), e())
+          }, []),
+          f = (e) => {
+            if (e.items)
+              return (0, n.jsxs)(
+                b,
+                {
+                  className: "group/collapsible",
+                  children: [
+                    (0, n.jsx)(J, {
+                      asChild: !0,
+                      children: (0, n.jsxs)(v, {
+                        className:
+                          "w-full flex justify-between items-center gap-2 px-2 py-1.5 [&[data-state=open]>svg]:rotate-180",
+                        children: [
+                          (0, n.jsxs)("span", {
+                            className: "flex items-center gap-2",
+                            children: [
+                              "iconName" in e &&
+                                (0, n.jsx)(C, {
+                                  name: e.iconName,
+                                  className: "h-4 w-4",
+                                }),
+                              (0, n.jsx)("span", { children: e.title }),
+                              "label" in e &&
+                                (0, n.jsx)(g, {
+                                  variant: "secondary",
+                                  children: e.label,
+                                }),
+                            ],
+                          }),
+                          (0, n.jsx)(m.A, {
+                            className:
+                              "h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200",
+                          }),
+                        ],
+                      }),
+                    }),
+                    (0, n.jsx)(N, {
+                      className:
+                        "space-y-1 overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down",
+                      children: e.items.map((e) => f(e)),
+                    }),
+                  ],
+                },
+                e.title
+              )
+            if ("href" in e) {
+              let t = (0, r.n2)(e.href, d)
+              return (0, n.jsxs)(
+                J,
+                {
+                  onSelect: () => c(() => o.push(e.href)),
+                  className: (0, r.cn)(
+                    "flex items-center gap-2 px-2 py-1.5",
+                    t && "bg-accent"
+                  ),
+                  children: [
+                    "iconName" in e
+                      ? (0, n.jsx)(C, { name: e.iconName })
+                      : (0, n.jsx)(C, { name: "Circle" }),
+                    (0, n.jsx)("span", { children: e.title }),
+                    e.label &&
+                      (0, n.jsx)(g, {
+                        variant: "secondary",
+                        children: e.label,
+                      }),
+                  ],
+                },
+                e.title
+              )
+            }
+          }
+        return (0, n.jsxs)(n.Fragment, {
+          children: [
+            (0, n.jsxs)(l.$n, {
+              variant: "outline",
+              size: "lg",
+              className: (0, r.cn)(
+                "max-w-64 w-full justify-start px-3 rounded-md bg-muted/50 text-muted-foreground",
+                t
+              ),
+              onClick: () => i(!0),
+              ...a,
+              children: [
+                (0, n.jsx)(F.A, { className: "me-2 h-4 w-4" }),
+                (0, n.jsx)("span", { children: "Search..." }),
+                (0, n.jsx)(K, { className: "ms-auto", children: "K" }),
+              ],
+            }),
+            (0, n.jsxs)(H, {
+              open: s,
+              onOpenChange: i,
+              ...a,
+              children: [
+                (0, n.jsx)(O, {
+                  className: "sr-only",
+                  children: "Search Menu",
+                }),
+                (0, n.jsx)(P, { placeholder: "Type a command or search..." }),
+                (0, n.jsxs)(U, {
+                  children: [
+                    (0, n.jsx)(R, { children: "No results found." }),
+                    (0, n.jsx)(k, {
+                      className: "h-[300px] max-h-[300px]",
+                      children: x.map((e) =>
+                        (0, n.jsx)(
+                          I,
+                          {
+                            heading: e.title,
+                            className: "[&_[cmdk-group-items]]:space-y-1",
+                            children: e.items.map((e) =>
+                              (0, n.jsx)(
+                                E.Fragment,
+                                { children: f(e) },
+                                e.title
+                              )
+                            ),
+                          },
+                          e.title
+                        )
+                      ),
+                    }),
+                  ],
+                }),
+              ],
+            }),
+          ],
+        })
+      }
+      function Z() {
+        let e = (0, u.usePathname)(),
+          { openMobile: t, setOpenMobile: a, isMobile: l } = (0, _.cL)(),
+          { settings: i } = (0, s.t)()
+        if ("horizontal" === i.layout && !l) return null
+        let o = (s) => {
+          if (s.items)
+            return (0, n.jsxs)(b, {
+              className: "group/collapsible",
+              children: [
+                (0, n.jsx)(v, {
+                  asChild: !0,
+                  children: (0, n.jsxs)(_.Uj, {
+                    className:
+                      "w-full justify-between [&[data-state=open]>svg]:rotate-180",
+                    children: [
+                      (0, n.jsxs)("span", {
+                        className: "flex items-center",
+                        children: [
+                          "iconName" in s &&
+                            (0, n.jsx)(C, {
+                              name: s.iconName,
+                              className: "me-2 h-4 w-4",
+                            }),
+                          (0, n.jsx)("span", { children: s.title }),
+                          "label" in s &&
+                            (0, n.jsx)(g, {
+                              variant: "secondary",
+                              className: "me-2",
+                              children: s.label,
+                            }),
+                        ],
+                      }),
+                      (0, n.jsx)(m.A, {
+                        className:
+                          "h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200",
+                      }),
+                    ],
+                  }),
+                }),
+                (0, n.jsx)(N, {
+                  className:
+                    "overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down",
+                  children: (0, n.jsx)(_.q9, {
+                    children: s.items.map((e) =>
+                      (0, n.jsx)(_.FX, { children: o(e) }, e.title)
+                    ),
+                  }),
+                }),
+              ],
+            })
+          if ("href" in s) {
+            let l = (0, r.n2)(s.href, e)
+            return (0, n.jsx)(_.Uj, {
+              isActive: l,
+              onClick: () => a(!t),
+              asChild: !0,
+              children: (0, n.jsxs)(c(), {
+                href: s.href,
+                children: [
+                  "iconName" in s &&
+                    (0, n.jsx)(C, { name: s.iconName, className: "h-4 w-4" }),
+                  (0, n.jsx)("span", { children: s.title }),
+                  "label" in s &&
+                    (0, n.jsx)(g, { variant: "secondary", children: s.label }),
+                ],
+              }),
+            })
+          }
+        }
+        return (0, n.jsxs)(_.Bx, {
+          side: "left",
+          children: [
+            (0, n.jsxs)(_.Gh, {
+              children: [
+                (0, n.jsxs)(c(), {
+                  href: "/",
+                  className:
+                    "w-fit flex text-foreground font-black p-2 pb-0 mb-2",
+                  onClick: () => l && a(!t),
+                  children: [
+                    (0, n.jsx)(d.default, {
+                      src: "/images/icons/shadboard.svg",
+                      alt: "",
+                      height: 24,
+                      width: 24,
+                      className: "dark:invert",
+                    }),
+                    (0, n.jsx)("span", { children: "Dashboard" }),
+                  ],
+                }),
+                (0, n.jsx)(V, { buttonClassName: "max-w-full" }),
+              ],
+            }),
+            (0, n.jsx)(k, {
+              children: (0, n.jsx)(_.Yv, {
+                className: "gap-0",
+                children: x.map((e) =>
+                  (0, n.jsxs)(
+                    _.Cn,
+                    {
+                      children: [
+                        (0, n.jsx)(_.jj, { children: e.title }),
+                        (0, n.jsx)(_.rQ, {
+                          children: (0, n.jsx)(_.wZ, {
+                            children: e.items.map((e) =>
+                              (0, n.jsx)(_.FX, { children: o(e) }, e.title)
+                            ),
+                          }),
+                        }),
+                      ],
+                    },
+                    e.title
+                  )
+                ),
+              }),
+            }),
+          ],
+        })
+      }
+      var $ = a(1394)
+      function G() {
+        let [e, t] = (0, E.useState)(!1),
+          a = () => {
+            t(
+              !!document.fullscreenElement ||
+                !!document.webkitFullscreenElement ||
+                !!document.msFullscreenElement
+            )
+          }
+        return (
+          (0, E.useEffect)(
+            () => (
+              document.addEventListener("fullscreenchange", a),
+              document.addEventListener("webkitfullscreenchange", a),
+              document.addEventListener("msfullscreenchange", a),
+              () => {
+                ;(document.removeEventListener("fullscreenchange", a),
+                  document.removeEventListener("webkitfullscreenchange", a),
+                  document.removeEventListener("msfullscreenchange", a))
+              }
+            ),
+            []
+          ),
+          (0, n.jsx)(l.$n, {
+            variant: "ghost",
+            size: "icon",
+            onClick: () => {
+              let t = document.documentElement
+              e
+                ? document.exitFullscreen
+                  ? document.exitFullscreen()
+                  : document.webkitExitFullscreen
+                    ? document.webkitExitFullscreen()
+                    : document.msExitFullscreen && document.msExitFullscreen()
+                : t.requestFullscreen
+                  ? t.requestFullscreen()
+                  : t.webkitRequestFullscreen
+                    ? t.webkitRequestFullscreen()
+                    : t.msRequestFullscreen
+                      ? t.msRequestFullscreen()
+                      : alert(
+                          "Fullscreen mode is not supported in this browser."
+                        )
+            },
+            "aria-label": "Toggle Fullscreen",
+            className: "hidden md:inline-flex",
+            children: (0, n.jsx)(C, {
+              name: e ? "Shrink" : "Expand",
+              className: "size-4",
+            }),
+          })
+        )
+      }
+      var X = a(3391),
+        Y = a(5205),
+        Q = a(1688),
+        W = a(1775),
+        ee = a(1946)
+      function et(e) {
+        let { ...t } = e
+        return (0, n.jsx)(W.bL, { "data-slot": "dropdown-menu", ...t })
+      }
+      function ea(e) {
+        let { className: t, ...a } = e
+        return (0, n.jsx)(W.l9, {
+          "data-slot": "dropdown-menu-trigger",
+          className: (0, r.cn)("cursor-pointer", t),
+          ...a,
+        })
+      }
+      function en(e) {
+        let { ...t } = e
+        return (0, n.jsx)(W.YJ, { "data-slot": "dropdown-menu-group", ...t })
+      }
+      function es(e) {
+        let { ...t } = e
+        return (0, n.jsx)(W.z6, {
+          "data-slot": "dropdown-menu-radio-group",
+          ...t,
+        })
+      }
+      function er(e) {
+        let { className: t, sideOffset: a = 4, ...s } = e
+        return (0, n.jsx)(W.ZL, {
+          children: (0, n.jsx)(W.UC, {
+            "data-slot": "dropdown-menu-content",
+            sideOffset: a,
+            className: (0, r.cn)(
+              "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md",
+              "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+              t
+            ),
+            ...s,
+          }),
+        })
+      }
+      function el(e) {
+        let { className: t, inset: a, variant: s = "default", ...l } = e
+        return (0, n.jsx)(W.q7, {
+          "data-slot": "dropdown-menu-item",
+          "data-inset": a,
+          "data-variant": s,
+          className: (0, r.cn)(
+            "relative flex cursor-pointer items-center rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:ps-8 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 focus:bg-accent focus:text-accent-foreground data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/20 data-[variant=destructive]:focus:text-destructive data-[variant=destructive]:*:[svg]:!text-destructive [&_svg:not([class*='text-'])]:text-muted-foreground",
+            t
+          ),
+          ...l,
+        })
+      }
+      function ei(e) {
+        let { className: t, children: a, ...s } = e
+        return (0, n.jsxs)(W.hN, {
+          "data-slot": "dropdown-menu-radio-item",
+          className: (0, r.cn)(
+            "relative flex cursor-pointer select-none items-center rounded-sm py-1.5 ps-8 pe-2 text-sm outline-hidden transition-colors focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50",
+            t
+          ),
+          ...s,
+          children: [
+            (0, n.jsx)("span", {
+              className:
+                "absolute start-2 flex h-3.5 w-3.5 items-center justify-center",
+              children: (0, n.jsx)(W.VF, {
+                children: (0, n.jsx)(ee.A, {
+                  className: "h-8 w-8 fill-current",
+                }),
+              }),
+            }),
+            a,
+          ],
+        })
+      }
+      function ed(e) {
+        let { className: t, inset: a, ...s } = e
+        return (0, n.jsx)(W.JU, {
+          "data-slot": "dropdown-menu-label",
+          "data-inset": a,
+          className: (0, r.cn)(
+            "px-2 py-1.5 text-sm font-medium data-[inset]:ps-8",
+            t
+          ),
+          ...s,
+        })
+      }
+      function eo(e) {
+        let { className: t, ...a } = e
+        return (0, n.jsx)(W.wv, {
+          "data-slot": "dropdown-menu-separator",
+          className: (0, r.cn)("-mx-1 my-1 h-px bg-muted", t),
+          ...a,
+        })
+      }
+      let ec = { light: X.A, dark: Y.A, system: Q.A }
+      function eu() {
+        let { settings: e, updateSettings: t } = (0, s.t)(),
+          a = e.mode,
+          r = ec[a],
+          i = (0, E.useCallback)(
+            (a) => {
+              t({ ...e, mode: a })
+            },
+            [e, t]
+          )
+        return (0, n.jsxs)(et, {
+          children: [
+            (0, n.jsx)(ea, {
+              asChild: !0,
+              children: (0, n.jsx)(l.$n, {
+                variant: "ghost",
+                size: "icon",
+                "aria-label": "Mode",
+                children: (0, n.jsx)(r, { className: "size-4" }),
+              }),
+            }),
+            (0, n.jsxs)(er, {
+              children: [
+                (0, n.jsx)(ed, { children: "Mode" }),
+                (0, n.jsx)(eo, {}),
+                (0, n.jsxs)(es, {
+                  value: a,
+                  children: [
+                    (0, n.jsx)(ei, {
+                      value: "light",
+                      onClick: () => i("light"),
+                      children: "Light",
+                    }),
+                    (0, n.jsx)(ei, {
+                      value: "dark",
+                      onClick: () => i("dark"),
+                      children: "Dark",
+                    }),
+                    (0, n.jsx)(ei, {
+                      value: "system",
+                      onClick: () => i("system"),
+                      children: "System",
+                    }),
+                  ],
+                }),
+              ],
+            }),
+          ],
+        })
+      }
+      var em = a(5984),
+        ex = a(6762),
+        ef = a(2738)
+      let eh = {
+        name: "John Doe",
+        avatar: "/images/avatars/male-01.svg",
+        email: "john.doe@example.com",
+      }
+      var ep = a(7261)
+      function eg(e) {
+        let { className: t, ...a } = e
+        return (0, n.jsx)(ep.bL, {
+          "data-slot": "avatar",
+          className: (0, r.cn)("relative flex h-10 w-10 shrink-0", t),
+          ...a,
+        })
+      }
+      function ej(e) {
+        let { className: t, ...a } = e
+        return (0, n.jsx)(ep._V, {
+          "data-slot": "avatar-image",
+          className: (0, r.cn)(
+            "aspect-square h-full w-full bg-muted rounded-lg object-cover",
+            t
+          ),
+          ...a,
+        })
+      }
+      function eb(e) {
+        let { className: t, ...a } = e
+        return (0, n.jsx)(ep.H4, {
+          className: (0, r.cn)(
+            "flex h-full w-full items-center justify-center bg-muted rounded-lg",
+            t
+          ),
+          ...a,
+        })
+      }
+      function ev() {
+        return (0, n.jsxs)(et, {
+          children: [
+            (0, n.jsx)(ea, {
+              asChild: !0,
+              children: (0, n.jsx)(l.$n, {
+                variant: "outline",
+                size: "icon",
+                className: "rounded-lg",
+                "aria-label": "User",
+                children: (0, n.jsxs)(eg, {
+                  className: "size-9",
+                  children: [
+                    (0, n.jsx)(ej, {
+                      src: null == eh ? void 0 : eh.avatar,
+                      alt: "",
+                    }),
+                    (0, n.jsx)(eb, {
+                      className: "bg-transparent",
+                      children:
+                        (null == eh ? void 0 : eh.name) && (0, r.IM)(eh.name),
+                    }),
+                  ],
+                }),
+              }),
+            }),
+            (0, n.jsxs)(er, {
+              forceMount: !0,
+              children: [
+                (0, n.jsxs)(ed, {
+                  className: "flex gap-2",
+                  children: [
+                    (0, n.jsxs)(eg, {
+                      children: [
+                        (0, n.jsx)(ej, {
+                          src: null == eh ? void 0 : eh.avatar,
+                          alt: "Avatar",
+                        }),
+                        (0, n.jsx)(eb, {
+                          className: "bg-transparent",
+                          children:
+                            (null == eh ? void 0 : eh.name) &&
+                            (0, r.IM)(eh.name),
+                        }),
+                      ],
+                    }),
+                    (0, n.jsxs)("div", {
+                      className: "flex flex-col overflow-hidden",
+                      children: [
+                        (0, n.jsx)("p", {
+                          className: "text-sm font-medium truncate",
+                          children: "John Doe",
+                        }),
+                        (0, n.jsx)("p", {
+                          className:
+                            "text-xs text-muted-foreground font-semibold truncate",
+                          children: null == eh ? void 0 : eh.email,
+                        }),
+                      ],
+                    }),
+                  ],
+                }),
+                (0, n.jsx)(eo, {}),
+                (0, n.jsxs)(en, {
+                  className: "max-w-48",
+                  children: [
+                    (0, n.jsx)(el, {
+                      asChild: !0,
+                      children: (0, n.jsxs)(c(), {
+                        href: "/",
+                        children: [
+                          (0, n.jsx)(em.A, { className: "me-2 size-4" }),
+                          "Profile",
+                        ],
+                      }),
+                    }),
+                    (0, n.jsx)(el, {
+                      asChild: !0,
+                      children: (0, n.jsxs)(c(), {
+                        href: "/",
+                        children: [
+                          (0, n.jsx)(ex.A, { className: "me-2 size-4" }),
+                          "Settings",
+                        ],
+                      }),
+                    }),
+                  ],
+                }),
+                (0, n.jsx)(eo, {}),
+                (0, n.jsxs)(el, {
+                  children: [
+                    (0, n.jsx)(ef.A, { className: "me-2 size-4" }),
+                    "Sign Out",
+                  ],
+                }),
+              ],
+            }),
+          ],
+        })
+      }
+      ;(a(6606),
+        (0, h.F)("transition duration-300 hover:scale-105 hover:z-10", {
+          variants: {
+            size: {
+              default: "h-10 w-10",
+              sm: "h-9 w-9 text-sm",
+              lg: "h-11 w-11",
+            },
+          },
+          defaultVariants: { size: "default" },
+        }))
+      var eN = a(5039)
+      function ew() {
+        let { isMobile: e, openMobile: t, setOpenMobile: a } = (0, _.cL)()
+        if (e)
+          return (0, n.jsx)(l.$n, {
+            "data-sidebar": "trigger",
+            variant: "ghost",
+            size: "icon",
+            onClick: () => a(!t),
+            "aria-label": "Toggle Sidebar",
+            children: (0, n.jsx)(eN.A, { className: "h-4 w-4" }),
+          })
+      }
+      function ek() {
+        return (0, n.jsxs)("div", {
+          className: "container flex h-14 justify-between items-center gap-4",
+          children: [
+            (0, n.jsx)(ew, {}),
+            (0, n.jsxs)(c(), {
+              href: "/",
+              className: "hidden text-foreground font-black lg:flex",
+              children: [
+                (0, n.jsx)(d.default, {
+                  src: "/images/icons/shadboard.svg",
+                  alt: "",
+                  height: 24,
+                  width: 24,
+                  className: "dark:invert",
+                }),
+                (0, n.jsx)("span", { children: "Dashboard" }),
+              ],
+            }),
+            (0, n.jsxs)("div", {
+              className: "flex gap-2",
+              children: [
+                (0, n.jsx)(G, {}),
+                (0, n.jsx)(eu, {}),
+                (0, n.jsx)(ev, {}),
+              ],
+            }),
+          ],
+        })
+      }
+      var ey = a(732),
+        e_ = a(9557)
+      function ez(e) {
+        let { ...t } = e
+        return (0, n.jsx)(ey.W1, { "data-slot": "menubar-menu", ...t })
+      }
+      function eC(e) {
+        let { ...t } = e
+        return (0, n.jsx)(ey.ZL, { "data-slot": "menubar-portal", ...t })
+      }
+      function eE(e) {
+        let { className: t, ...a } = e
+        return (0, n.jsx)(ey.bL, {
+          "data-slot": "menubar",
+          className: (0, r.cn)(
+            "flex h-9 items-center gap-x-1 rounded-md border bg-background p-1",
+            t
+          ),
+          ...a,
+        })
+      }
+      function eF(e) {
+        let { className: t, ...a } = e
+        return (0, n.jsx)(ey.l9, {
+          "data-slot": "menubar-trigger",
+          className: (0, r.cn)(
+            "flex cursor-pointer select-none items-center rounded-sm px-3 py-1 text-sm font-medium outline-hidden focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground",
+            t
+          ),
+          ...a,
+        })
+      }
+      function eL(e) {
+        let { className: t, inset: a, children: s, ...l } = e
+        return (0, n.jsxs)(ey.ZP, {
+          "data-slot": "menubar-sub-trigger",
+          "data-inset": a,
+          className: (0, r.cn)(
+            "focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground cursor-pointer flex items-center rounded-sm px-2 py-1.5 text-sm outline-none select-none data-[inset]:ps-8",
+            t
+          ),
+          ...l,
+          children: [
+            s,
+            (0, n.jsx)(e_.A, { className: "ms-auto h-4 w-4 rtl:-scale-x-100" }),
+          ],
+        })
+      }
+      function eA(e) {
+        let { ...t } = e
+        return (0, n.jsx)(ey.Pb, { "data-slot": "menubar-sub", ...t })
+      }
+      function eM(e) {
+        let { className: t, ...a } = e
+        return (0, n.jsx)(ey.G5, {
+          "data-slot": "menubar-sub-content",
+          className: (0, r.cn)(
+            "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+            t
+          ),
+          ...a,
+        })
+      }
+      function eS(e) {
+        let {
+          className: t,
+          align: a = "start",
+          alignOffset: s = -4,
+          sideOffset: l = 8,
+          ...i
+        } = e
+        return (0, n.jsx)(eC, {
+          children: (0, n.jsx)(ey.UC, {
+            "data-slot": "menubar-content",
+            align: a,
+            alignOffset: s,
+            sideOffset: l,
+            className: (0, r.cn)(
+              "z-50 min-w-[12rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+              t
+            ),
+            ...i,
+          }),
+        })
+      }
+      function eD(e) {
+        let { className: t, inset: a, variant: s = "default", ...l } = e
+        return (0, n.jsx)(ey.q7, {
+          "data-slot": "menubar-item",
+          "data-inset": a,
+          "data-variant": s,
+          className: (0, r.cn)(
+            "relative flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 focus:bg-accent focus:text-accent-foreground data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/20 data-[variant=destructive]:focus:text-destructive data-[variant=destructive]:*:[svg]:!text-destructive [&_svg:not([class*='text-'])]:text-muted-foreground",
+            t
+          ),
+          ...l,
+        })
+      }
+      function eq() {
+        let e = (0, u.usePathname)(),
+          t = (a) => {
+            if (a.items)
+              return (0, n.jsxs)(eA, {
+                children: [
+                  (0, n.jsxs)(eL, {
+                    className: "gap-2",
+                    children: [
+                      "iconName" in a &&
+                        (0, n.jsx)(C, {
+                          name: a.iconName,
+                          className: "me-2 h-4 w-4",
+                        }),
+                      (0, n.jsx)("span", { children: a.title }),
+                      "label" in a &&
+                        (0, n.jsx)(g, {
+                          variant: "secondary",
+                          children: a.label,
+                        }),
+                    ],
+                  }),
+                  (0, n.jsx)(eM, {
+                    className: "max-h-[90vh] flex flex-col flex-wrap gap-1",
+                    children: a.items.map((e) =>
+                      (0, n.jsx)(
+                        eD,
+                        { className: "p-0", children: t(e) },
+                        e.title
+                      )
+                    ),
+                  }),
+                ],
+              })
+            if ("href" in a) {
+              let t = (0, r.n2)(a.href, e)
+              return (0, n.jsx)(eD, {
+                asChild: !0,
+                children: (0, n.jsxs)(c(), {
+                  href: a.href,
+                  className: (0, r.cn)("w-full gap-2", t && "bg-accent"),
+                  children: [
+                    "iconName" in a
+                      ? (0, n.jsx)(C, {
+                          name: a.iconName,
+                          className: "h-4 w-4",
+                        })
+                      : (0, n.jsx)(C, { name: "Circle", className: "h-2 w-2" }),
+                    (0, n.jsx)("span", { children: a.title }),
+                    "label" in a &&
+                      (0, n.jsx)(g, {
+                        variant: "secondary",
+                        children: a.label,
+                      }),
+                  ],
+                }),
+              })
+            }
+          }
+        return (0, n.jsx)(eE, {
+          className: "border-0",
+          children: x.map((e) =>
+            (0, n.jsxs)(
+              ez,
+              {
+                children: [
+                  (0, n.jsx)(eF, { children: e.title }),
+                  (0, n.jsx)(eS, {
+                    className: "space-y-1",
+                    children: e.items.map((e) =>
+                      (0, n.jsx)(E.Fragment, { children: t(e) }, e.title)
+                    ),
+                  }),
+                ],
+              },
+              e.title
+            )
+          ),
+        })
+      }
+      function eB() {
+        return (0, n.jsxs)("div", {
+          className:
+            "container hidden justify-between items-center py-1 lg:flex",
+          children: [
+            (0, n.jsx)(eq, {}),
+            (0, n.jsx)(V, { buttonClassName: "h-8" }),
+          ],
+        })
+      }
+      function eO() {
+        return (0, n.jsxs)("header", {
+          className:
+            "sticky top-0 z-50 w-full bg-background border-b border-sidebar-border",
+          children: [
+            (0, n.jsx)(eB, {}),
+            (0, n.jsx)($.w, {
+              className: "hidden bg-sidebar-border h-[0.5px] md:block",
+            }),
+            (0, n.jsx)(ek, {}),
+          ],
+        })
+      }
+      function eT(e) {
+        let { children: t } = e
+        return (0, n.jsxs)(n.Fragment, {
+          children: [
+            (0, n.jsx)(Z, {}),
+            (0, n.jsxs)("div", {
+              className: "w-full",
+              children: [
+                (0, n.jsx)(eO, {}),
+                (0, n.jsx)("main", {
+                  className: "min-h-[calc(100svh-9.85rem)] bg-muted/40",
+                  children: t,
+                }),
+                (0, n.jsx)(i, {}),
+              ],
+            }),
+          ],
+        })
+      }
+      function eH() {
+        return (0, n.jsx)("header", {
+          className:
+            "sticky top-0 z-50 w-full bg-background border-b border-sidebar-border",
+          children: (0, n.jsxs)("div", {
+            className: "container flex h-14 justify-between items-center gap-4",
+            children: [
+              (0, n.jsx)(ew, {}),
+              (0, n.jsxs)("div", {
+                className: "grow flex justify-end gap-2",
+                children: [
+                  (0, n.jsx)(_.x2, { className: "hidden lg:flex lg:me-auto" }),
+                  (0, n.jsx)(G, {}),
+                  (0, n.jsx)(eu, {}),
+                  (0, n.jsx)(ev, {}),
+                ],
+              }),
+            ],
+          }),
+        })
+      }
+      function eP(e) {
+        let { children: t } = e
+        return (0, n.jsxs)(n.Fragment, {
+          children: [
+            (0, n.jsx)(Z, {}),
+            (0, n.jsxs)("div", {
+              className: "w-full",
+              children: [
+                (0, n.jsx)(eH, {}),
+                (0, n.jsx)("main", {
+                  className: "min-h-[calc(100svh-6.82rem)] bg-muted/40",
+                  children: t,
+                }),
+                (0, n.jsx)(i, {}),
+              ],
+            }),
+          ],
+        })
+      }
+      function eU(e) {
+        let { children: t } = e
+        return !(function () {
+          let { settings: e } = (0, s.t)()
+          return "vertical" === e.layout
+        })()
+          ? (0, n.jsx)(eT, { children: t })
+          : (0, n.jsx)(eP, { children: t })
+      }
+    },
+    3711: (e, t, a) => {
+      Promise.resolve().then(a.bind(a, 1594))
+    },
+  },
+  (e) => {
+    var t = (t) => e((e.s = t))
+    ;(e.O(0, [369, 311, 206, 518, 773, 497, 954, 358], () => t(3711)),
+      (_N_E = e.O()))
+  },
+])

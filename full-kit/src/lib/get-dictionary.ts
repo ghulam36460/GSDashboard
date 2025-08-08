@@ -6,8 +6,8 @@ import type { LocaleType } from "@/types"
 const dictionaries = {
   en: () =>
     import("@/data/dictionaries/en.json").then((module) => module.default),
-  ar: () =>
-    import("@/data/dictionaries/ar.json").then((module) => module.default),
+  ur: () =>
+    import("@/data/dictionaries/ur.json").then((module) => module.default),
 }
 
 export async function getDictionary(locale: LocaleType) {

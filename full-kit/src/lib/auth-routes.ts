@@ -1,4 +1,5 @@
 import { routeMap } from "@/configs/auth-routes"
+import { adminOnlyRoutes } from "@/configs/role-routes"
 
 const getBasePath = (route: string): string => {
   // Extract the base path (e.g., "/user" from "/user/profile")
@@ -31,4 +32,11 @@ export function isPublicRoute(route: string) {
 
 export function isGuestRoute(route: string) {
   return isRouteType(route, "guest")
+}
+
+export function requiredRoleForRoute(route: string): "ADMIN" | null {
+  // Match against base path for simplicity
+  const basePath = getBasePath(route)
+  if (adminOnlyRoutes.some((r) => basePath.startsWith(r))) return "ADMIN"
+  return null
 }

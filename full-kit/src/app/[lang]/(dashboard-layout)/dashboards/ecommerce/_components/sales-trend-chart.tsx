@@ -27,11 +27,11 @@ function ModifiedChartTooltipContent(
   return (
     <ChartTooltipContent
       {...props}
-      payload={props.payload.map((item) => ({
-        ...item,
-        name: camelCaseToTitleCase(String(item.name)),
-        value: formatCurrency(Number(item.value)),
-      }))}
+      formatter={(value, name) => (
+        <span className="font-medium tabular-nums text-foreground">
+          {camelCaseToTitleCase(String(name))}: {formatCurrency(Number(value))}
+        </span>
+      )}
     />
   )
 }

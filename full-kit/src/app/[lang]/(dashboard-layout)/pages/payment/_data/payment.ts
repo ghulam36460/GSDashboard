@@ -30,4 +30,40 @@ export const paymentData: PaymentType = {
       isDefault: false,
     },
   ],
+  savedWallets: [
+    {
+      id: "wallet_1",
+      provider: "easypaisa",
+      phoneNumber: "03123456789",
+      maskedNumber: "03XX-XXXX-789",
+      isDefault: true,
+    },
+    {
+      id: "wallet_2",
+      provider: "jazzcash",
+      phoneNumber: "03210987654",
+      maskedNumber: "03XX-XXXX-654",
+      isDefault: false,
+    },
+  ],
+  savedBinanceAccounts: [
+    {
+      id: "binance_1",
+      binanceId: "user@example.com",
+      currency: "USDT",
+      maskedId: "use***@example.com",
+      isDefault: true,
+    },
+  ],
+  savedBankAccounts: [
+    {
+      id: "bank_1",
+      bankName: "Habib Bank Limited (HBL)",
+      accountNumber: "1234567890123456",
+      accountTitle: "John Doe",
+      iban: "PK12HABB1234567890123456",
+      maskedAccount: "****-****-3456",
+      isDefault: true,
+    },
+  ],
 }

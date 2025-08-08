@@ -16,6 +16,8 @@ declare module "next-auth" {
       name: string
       avatar: string | null
       status: string
+      role: "ADMIN" | "USER"
+      onboardingCompleted?: boolean
     }
   }
 
@@ -25,6 +27,8 @@ declare module "next-auth" {
     name: string
     avatar: string | null
     status: string
+    role: "ADMIN" | "USER"
+    onboardingCompleted?: boolean
   }
 }
 declare module "next-auth/jwt" {
@@ -34,12 +38,16 @@ declare module "next-auth/jwt" {
     name: string
     avatar: string | null
     status: string
+    role: "ADMIN" | "USER"
+    onboardingCompleted?: boolean
   }
 }
 
 // Configuration for NextAuth with custom adapters and providers
 // NextAuth.js documentation: https://next-auth.js.org/getting-started/introduction
 export const authOptions: NextAuthOptions = {
+  // Ensure a stable secret for JWT encryption/decryption
+  secret: process.env.NEXTAUTH_SECRET,
   // Use Prisma adapter for database interaction
   // More info: https://next-auth.js.org/getting-started/adapter
   adapter: PrismaAdapter(db) as Adapter,
@@ -58,7 +66,8 @@ export const authOptions: NextAuthOptions = {
           // Authenticate the user by sending credentials to an external API
           // Refer to the NextAuth.js documentation for handling custom sign-in flows:
           // https://next-auth.js.org/providers/credentials
-          const res = await fetch(`${process.env.API_URL}/auth/sign-in`, {
+          // Use a relative URL so it works across dev/prod and any port
+          const res = await fetch(`/api/auth/sign-in`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -92,7 +101,11 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt", // Use JWT strategy for sessions
     maxAge: 30 * 24 * 60 * 60, // Set session expiration to 30 days
+    updateAge: 24 * 60 * 60, // Update session every 24 hours
     // More info on session strategies: https://next-auth.js.org/getting-started/options#session
+  },
+  jwt: {
+    maxAge: 30 * 24 * 60 * 60, // 30 days
   },
   callbacks: {
     // Callback to add custom user properties to JWT
@@ -104,6 +117,15 @@ export const authOptions: NextAuthOptions = {
         token.avatar = user.avatar
         token.email = user.email
         token.status = user.status
+        token.role =
+          (user as unknown as { role?: "ADMIN" | "USER" }).role ??
+          token.role ??
+          "USER"
+        // When logging in, propagate onboarding status if available
+        const u = user as Partial<{ onboardingCompleted: boolean }>
+        if (typeof u.onboardingCompleted !== "undefined") {
+          token.onboardingCompleted = u.onboardingCompleted
+        }
       }
 
       return token
@@ -116,10 +138,41 @@ export const authOptions: NextAuthOptions = {
         session.user.name = token.name
         session.user.avatar = token.avatar
         session.user.email = token.email
-        token.status = token.status
+        session.user.status = token.status
+        session.user.role = token.role
+        session.user.onboardingCompleted = token.onboardingCompleted
       }
 
       return session
     },
+    // Normalize redirects so protected flows land on the app home route.
+    // Locale will be added by middleware if missing.
+    async redirect({ url, baseUrl }) {
+      try {
+        // Allow relative redirects (Next will resolve against baseUrl)
+        if (url.startsWith("/")) return url
+        // Allow same-origin absolute URLs
+        if (url.startsWith(baseUrl)) return url
+      } catch {
+        // fall through
+      }
+      return process.env.HOME_PATHNAME || "/dashboards/analytics"
+    },
+  },
+  events: {
+    async signOut() {
+      // Clear any cached data on sign out
+    },
+  },
+  logger: {
+    error(code, metadata) {
+      // Suppress JWT session errors to avoid console spam
+      console.error("NextAuth Error:", code, metadata)
+    },
+    warn(code) {
+      // Log warnings
+      console.warn("NextAuth Warning:", code)
+    },
+    debug: () => {}, // Disable debug logs
   },
 }

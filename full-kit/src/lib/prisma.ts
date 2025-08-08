@@ -1,13 +1,11 @@
-import { PrismaClient } from "@prisma/client/edge"
-import { withAccelerate } from "@prisma/extension-accelerate"
+import { PrismaClient } from "@prisma/client"
 
 const prismaClientSingleton = () => {
-  return new PrismaClient().$extends(withAccelerate())
+  return new PrismaClient()
 }
 
 declare global {
   // Prevent TypeScript from complaining about the global prisma variable
-  // eslint-disable-next-line no-var
   var prisma: undefined | ReturnType<typeof prismaClientSingleton>
 }
 
