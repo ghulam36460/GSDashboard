@@ -27,6 +27,20 @@ const paymentRequestSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if payment functionality is properly configured
+    const hasPaymentConfig =
+      process.env.PAYMENT_ENCRYPTION_KEY && process.env.STRIPE_SECRET_KEY
+
+    if (!hasPaymentConfig) {
+      return NextResponse.json(
+        {
+          success: false,
+          message:
+            "Payment functionality is not configured. Please contact administrator.",
+        },
+        { status: 501 }
+      )
+    }
     // Check CSRF token
     if (!validateCSRF(request)) {
       return NextResponse.json(
